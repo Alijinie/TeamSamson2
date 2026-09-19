@@ -145,9 +145,6 @@
       .modal-panel { border-radius: 1.1rem !important; }
     }
 
-    /* Formation cards (static, text-rich replacement for the old draggable demo) */
-    .formation-diagram { aspect-ratio: 16 / 8; }
-
     /* ---- Responsive hardening: fluid type, no horizontal scroll, large-phone safe ---- */
     img { max-width: 100%; height: auto; }
     img.modal-hero-img, #service-modal-image img, [data-media] img { height: 100%; }
@@ -177,16 +174,6 @@
     /* Samsung large-screen phones in landscape / tablets portrait: keep grids readable */
     @media (min-width: 481px) and (max-width: 820px) {
       #services-grid { grid-template-columns: 1fr; }
-      #formation-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 820px) {
-      #formation-cards { grid-template-columns: 1fr; }
-    }
-    @media (min-width: 821px) {
-      #formation-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (min-width: 1100px) {
-      #formation-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -311,14 +298,10 @@
         </div>
 
         <!-- At-a-Glance Stats Strip -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           <div class="glass rounded-2xl p-4 sm:p-5 text-center space-y-1">
             <span class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 block">5</span>
             <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">Services</span>
-          </div>
-          <div class="glass rounded-2xl p-4 sm:p-5 text-center space-y-1">
-            <span class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 block">4</span>
-            <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">Formation guides</span>
           </div>
           <div class="glass rounded-2xl p-4 sm:p-5 text-center space-y-1">
             <span class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 block">5</span>
@@ -327,28 +310,6 @@
           <div class="glass rounded-2xl p-4 sm:p-5 text-center space-y-1">
             <span class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 block">3</span>
             <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">Ways to reach us</span>
-          </div>
-        </div>
-
-        <!-- Formations: text-rich cards + modals (replaces the old draggable demo) -->
-        <div class="space-y-4">
-          <div class="space-y-2">
-            <span class="text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">HOW WE MOVE AROUND YOU</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">Four formations, explained in plain words</h2>
-            <p class="text-stone-600 text-xs sm:text-sm max-w-2xl leading-relaxed">
-              A protection team changes shape to suit the space, the crowd and how fast you are moving.
-              Read each card, then open it for officer positions, when we use it, and what it feels like for you as the guest.
-            </p>
-          </div>
-
-          <div id="formation-cards" class="grid grid-cols-1 gap-3 sm:gap-4"></div>
-
-          <div class="glass rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">Not sure which one fits your event? Answer three questions and we will point you to the right service.</p>
-            <div class="flex flex-wrap gap-2 flex-shrink-0">
-              <button data-open-modal="modal-formations" class="bg-white hover:bg-stone-50 border border-stone-200 text-stone-800 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all">Why formations matter</button>
-              <button data-open-finder class="bg-[#80182a] hover:bg-[#6e1423] text-white px-4 py-2.5 rounded-xl text-xs font-semibold transition-all">Find the right service</button>
-            </div>
           </div>
         </div>
 
@@ -378,7 +339,7 @@
               <ol class="space-y-2 text-xs sm:text-sm text-stone-700 leading-relaxed list-none">
                 <li><strong class="text-stone-900">1. Briefing</strong> — a short call or WhatsApp chat: who, where, when.</li>
                 <li><strong class="text-stone-900">2. Assessment</strong> — we check people, places and routes for the real risks.</li>
-                <li><strong class="text-stone-900">3. Plan</strong> — team size, timings, contacts and formations agreed in one plan.</li>
+                <li><strong class="text-stone-900">3. Plan</strong> — team size, timings and contacts agreed in one plan.</li>
                 <li><strong class="text-stone-900">4. Deployment</strong> — officers in position before you arrive, one team lead to call.</li>
                 <li><strong class="text-stone-900">5. Review</strong> — what happened, and what to adjust next time.</li>
               </ol>
@@ -823,51 +784,6 @@
       </div>
     </div>
 
-    <!-- Modal 4: Why Formations -->
-    <div id="modal-formations" class="modal-backdrop hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-start sm:items-center justify-center p-3 sm:p-6 py-6 sm:py-10" role="dialog" aria-modal="true" aria-labelledby="formations-modal-title">
-      <div class="modal-panel bg-white rounded-2xl sm:rounded-3xl max-w-lg w-full my-auto border border-stone-200 shadow-2xl overflow-hidden">
-        <div class="relative h-32 sm:h-40 overflow-hidden flex-shrink-0 bg-gradient-to-br from-[#80182a] via-[#4a0f1c] to-stone-950">
-          <div class="absolute inset-0 dot-pattern opacity-70"></div>
-          <div data-media="modals.formations" class="absolute inset-0"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent"></div>
-          <button data-close-modal="modal-formations" aria-label="Close" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur text-white text-lg leading-none transition-colors">×</button>
-          <div class="absolute bottom-3 left-4 right-4 sm:left-6 sm:right-6">
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md border border-white/30 text-white">Formations</span>
-            <h3 id="formations-modal-title" class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1.5 leading-tight">Why the team changes shape</h3>
-          </div>
-        </div>
-        <div class="p-4 sm:p-6 space-y-4">
-          <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">A protection team does not stand still around you. It changes formation to suit the space, the crowd and how fast you are moving. The guides below use four officers — the real size of a team depends on the assessment.</p>
-          <ul id="formations-list" class="space-y-2"></ul>
-          <div class="bg-[#f8f6f0] border border-stone-200/60 rounded-xl px-3.5 py-2.5 text-[11px] sm:text-xs text-stone-600 leading-relaxed space-y-1">
-            <p><strong class="text-stone-800">What stays the same in every shape:</strong> officers face outward, the protected person stays in the middle, and one team lead owns movement and communication.</p>
-            <p>Formations are chosen at the planning stage and adjusted on the day as crowds, venues and timings change.</p>
-          </div>
-          <div class="flex flex-col sm:flex-row gap-2 pt-2 border-t border-stone-100">
-            <button data-open-brief class="flex-1 py-2.5 sm:py-3 rounded-xl border border-stone-200 hover:bg-stone-50 font-medium text-xs text-stone-700 transition-colors">Book a briefing</button>
-            <button data-close-modal="modal-formations" class="flex-1 py-2.5 sm:py-3 rounded-xl bg-[#80182a] hover:bg-[#6e1423] text-white font-medium text-xs sm:text-sm transition-colors text-center">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 4b: Formation Detail (filled by openFormationModal) -->
-    <div id="modal-formation-detail" class="modal-backdrop hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-start sm:items-center justify-center p-3 sm:p-6 py-6 sm:py-10" role="dialog" aria-modal="true" aria-labelledby="formation-detail-title">
-      <div class="modal-panel bg-white rounded-2xl sm:rounded-3xl max-w-lg w-full my-auto border border-stone-200 shadow-2xl overflow-hidden">
-        <div class="relative h-32 sm:h-40 overflow-hidden flex-shrink-0 bg-gradient-to-br from-[#80182a] via-[#4a0f1c] to-stone-950">
-          <div class="absolute inset-0 dot-pattern opacity-70"></div>
-          <div data-media="modals.formations" class="absolute inset-0"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent"></div>
-          <button data-close-modal="modal-formation-detail" aria-label="Close" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur text-white text-lg leading-none transition-colors">×</button>
-          <div class="absolute bottom-3 left-4 right-4 sm:left-6 sm:right-6">
-            <span id="formation-detail-tag" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md border border-white/30 text-white">Formation</span>
-            <h3 id="formation-detail-title" class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1.5 leading-tight"></h3>
-          </div>
-        </div>
-        <div id="formation-detail-body" class="p-4 sm:p-6 space-y-4"></div>
-      </div>
-    </div>
-
     <!-- Modal 5: Our Office -->
     <div id="modal-place" class="modal-backdrop hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-start sm:items-center justify-center p-3 sm:p-6 py-6 sm:py-10" role="dialog" aria-modal="true" aria-labelledby="place-modal-title">
       <div class="modal-panel bg-white rounded-2xl sm:rounded-3xl max-w-lg w-full my-auto border border-stone-200 shadow-2xl overflow-hidden">
@@ -908,13 +824,12 @@ const IMAGES = {
   office: 'office.jpg',                  // Contact tab card and the office modal
   modals: {                    // header photos for the small modals
     brief: 'brief.jpg',
-    finder: 'finder.jpg',
-    formations: 'formations.jpg'
+    finder: 'finder.jpg'
   },
   gallery: ['1.jpg', '2.jpg', 'ma2.jpg', 'close.jpg', 'vip3.jpg', 'office.jpg'],   // home gallery strip — all files exist in this folder (captions in SITE_DATA.galleryCaptions)
   services: {                  // card = photo on the service card, modal = header photo, thumbs = two small photos inside the modal
     close:      { card: 'close3.jpg', modal: 'close.jpg', thumbs: ['1.jpg', 'close2.jpg'] },
-    vip:        { card: 'formations.jpg', modal: 'about.jpg', thumbs: ['hero.jpg', 'office.jpg'] },
+    vip:        { card: 'vip3.jpg', modal: 'about.jpg', thumbs: ['hero.jpg', 'office.jpg'] },
     protocol:   { card: '2.jpg', modal: 'protoco.jpg', thumbs: ['pro.jpg', 'hero.jpg'] },
     consulting: { card: 'consulting.jpg', modal: 'consl.jpg', thumbs: ['co.jpg', 'management.jpg'] },
     management: { card: 'management.jpg', modal: 'cons.jpg', thumbs: ['office.jpg', 'vip3.jpg'] }
@@ -998,7 +913,7 @@ const SITE_DATA = {
   steps: [
     { id: 'briefing', title: 'Briefing', text: 'You tell us who needs protection, where and when. A short call or WhatsApp chat is enough to begin.', detail: 'Have the date, the venue or route and the number of people to hand. If you are unsure of any of it, say so and we will work it out with you.' },
     { id: 'assessment', title: 'Assessment', text: 'We look at the people, places and routes involved and identify the risks worth planning for.', detail: 'Depending on the size of the assignment, this can be a desk review or a visit to the venue.' },
-    { id: 'plan', title: 'Plan', text: 'We agree the team size, formation, timings and how everyone stays in contact before the day.', detail: 'You receive one plan: who is where, when, and who to call if something changes.' },
+    { id: 'plan', title: 'Plan', text: 'We agree the team size, timings and how everyone stays in contact before the day.', detail: 'You receive one plan: who is where, when, and who to call if something changes.' },
     { id: 'deployment', title: 'Deployment', text: 'Officers are on site and in position before you arrive. One team lead is your point of contact throughout.', detail: 'The team lead briefs the officers on the day and stays in touch with you or your representative.' },
     { id: 'review', title: 'Review', text: 'After the assignment we go over what happened and adjust the plan for next time.', detail: 'For ongoing work this becomes a regular review, so the plan keeps up with how your needs change.' }
   ],
@@ -1022,28 +937,6 @@ const SITE_DATA = {
   ],
   situations: ['Weddings and ceremonies', 'Conferences and conventions', 'Worship gatherings', 'Daily movement', 'Business travel', 'Visiting delegations', 'Corporate events', 'Public appearances', 'Estates and complexes', 'Funerals and memorial services'],
   galleryCaptions: ['Close protection detail', 'Arrival at an event', 'Protocol team on duty', 'Officers in position', 'Guest reception line', 'Advance check at the venue'],
-  formations: [
-    { id: 'diamond', name: 'Diamond', tag: 'OPEN SPACE · EVERYDAY MOVEMENT', text: 'The everyday shape in open space. One officer ahead, one behind and one on each side.',
-      positions: 'Point officer ahead watching the route; two flank officers left and right watching outward; rear officer watching behind. You walk in the middle.',
-      bestFor: ['Walking across open ground', 'Car parks and forecourts', 'Arrivals and departures', 'Everyday movement'],
-      experience: 'You walk normally with space around you. The team adjusts pace to yours and opens or closes distance as the crowd changes.',
-      tip: 'Our default for movement unless the space forces another shape.' },
-    { id: 'box', name: 'Box', tag: 'STANDING · SLOW CROWDS', text: 'Officers at four corners around someone who is standing or moving slowly, such as at a reception or in a queue.',
-      positions: 'One officer at each corner of a square around you, all facing outward. Corners hold even when you turn to greet someone.',
-      bestFor: ['Receptions and photo lines', 'Queues and holding areas', 'Meet-and-greet lines', 'Standing interviews'],
-      experience: 'You can talk, greet and pose while the square holds. Officers do not crowd your conversation — they watch the edges.',
-      tip: 'Often paired with protocol hosts who manage who approaches next.' },
-    { id: 'wedge', name: 'Wedge', tag: 'BUSY CROWDS · EXITS', text: 'A V that opens a path through a busy crowd toward an exit or a vehicle.',
-      positions: 'Point officer at the front of the V clearing the path; two wing officers angled back along your sides; rear officer close behind you.',
-      bestFor: ['Pushing through dense crowds', 'Moving to a vehicle', 'Exits after a programme', 'Market and street movement'],
-      experience: 'Movement is deliberate and steady. The point officer asks for the way where needed; you keep walking inside the V.',
-      tip: 'Used for short bursts — once clear, the team usually settles back into diamond.' },
-    { id: 'column', name: 'Column', tag: 'NARROW PLACES · CORRIDORS', text: 'A single line for narrow places such as corridors, stairwells and gates.',
-      positions: 'One officer ahead, one or two with you in the middle, one behind. Order is kept on stairs and through doors.',
-      bestFor: ['Corridors and stairwells', 'Gates and doorways', 'Aircraft and vehicle boarding', 'Narrow venue passages'],
-      experience: 'You follow the lead officer through the pinch point. The team re-forms on the other side without you needing to stop.',
-      tip: 'Advance checks matter most here — we confirm door widths, stairs and alternative exits beforehand.' }
-  ],
   whenOptions: ['As soon as possible', 'Within a week', 'Within a month', 'Just exploring'],
   finder: {
     questions: [
@@ -1068,7 +961,7 @@ const SITE_DATA = {
   }
 };
 
-// --- SERVICE GLYPHS (each service drawn as a formation of dots) ---
+// --- SERVICE GLYPHS (dot motifs) ---
 const GLYPHS = {
   close: (a) => `<circle cx="24" cy="24" r="16" stroke-dasharray="2 4"/><circle cx="24" cy="24" r="5.5" fill="${a}" stroke="none"/><g fill="currentColor" stroke="none"><circle cx="24" cy="8" r="3"/><circle cx="40" cy="24" r="3"/><circle cx="24" cy="40" r="3"/><circle cx="8" cy="24" r="3"/></g>`,
   vip: (a) => `<path d="M24 6 42 24 24 42 6 24Z"/><circle cx="24" cy="24" r="5.5" fill="${a}" stroke="none"/><g fill="currentColor" stroke="none"><circle cx="24" cy="6" r="3"/><circle cx="42" cy="24" r="3"/><circle cx="24" cy="42" r="3"/><circle cx="6" cy="24" r="3"/></g>`,
@@ -1115,7 +1008,6 @@ const SLOT_META = {
   office: { label: 'Our office', glyph: 'protocol', placeholder: false },
   'modals.brief': { label: 'Briefing', glyph: 'close', placeholder: false },
   'modals.finder': { label: 'Finder', glyph: 'consulting', placeholder: false },
-  'modals.formations': { label: 'Formations', glyph: 'vip', placeholder: false }
 };
 function renderMediaSlots() {
   document.querySelectorAll('[data-media]').forEach((el) => {
@@ -1147,7 +1039,7 @@ document.addEventListener('error', (e) => {
 let currentTab = 'home';
 let currentServiceIdx = 0;
 let lastFocused = null;
-/* stageApi removed: formations are now static cards */
+
 const brief = { step: 1, services: [], name: '', phone: '', where: '', when: '', notes: '', errors: {} };
 const finder = { step: 0, picks: [] };
 
@@ -1664,78 +1556,10 @@ function renderHomePreview() {
       </span>
     </button>`).join('');
 }
-function formationDiagram(id) {
-  const dots = {
-    diamond: [[50, 12], [82, 50], [50, 88], [18, 50]],
-    box: [[28, 28], [72, 28], [28, 72], [72, 72]],
-    wedge: [[50, 10], [24, 62], [76, 62], [50, 88]],
-    column: [[50, 8], [50, 36], [50, 64], [50, 90]]
-  }[id] || [[50, 12], [82, 50], [50, 88], [18, 50]];
-  const circles = dots.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="7" fill="#fff" stroke="#80182a" stroke-width="2.5"/><circle cx="${x}" cy="${y}" r="2.2" fill="#80182a" stroke="none"/>`).join('');
-  return `<svg viewBox="0 0 100 100" class="w-full h-full" aria-hidden="true"><rect x="4" y="4" width="92" height="92" rx="16" fill="#f8f6f0" stroke="#e7e0d3"/><circle cx="50" cy="50" r="9" fill="#d9a441" stroke="#fff" stroke-width="2.5"/>${circles}</svg>`;
-}
-function renderFormationCards() {
-  const el = document.getElementById('formation-cards');
-  if (!el) return;
-  el.innerHTML = SITE_DATA.formations.map((f) => `
-    <article class="bg-white rounded-3xl border border-stone-200/80 shadow-sm overflow-hidden flex flex-col">
-      <div class="formation-diagram p-4 pb-0"><div class="w-full h-full rounded-2xl overflow-hidden border border-stone-200/60">${formationDiagram(f.id)}</div></div>
-      <div class="p-5 flex flex-col gap-2.5 flex-1">
-        <div>
-          <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">${esc(f.tag || 'FORMATION')}</span>
-          <h3 class="font-serif text-2xl font-bold text-stone-900 mt-0.5">${esc(f.name)}</h3>
-        </div>
-        <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">${esc(f.text)}</p>
-        <div class="flex flex-wrap gap-1.5">
-          ${f.bestFor.slice(0, 3).map((x) => `<span class="text-[10px] font-semibold text-stone-600 bg-[#f8f6f0] border border-stone-200/60 rounded-full px-2.5 py-1">${esc(x)}</span>`).join('')}
-        </div>
-        <div class="mt-auto pt-2 flex flex-col sm:flex-row gap-2">
-          <button data-show-formation="${f.id}" class="flex-1 py-2.5 rounded-xl bg-[#80182a] hover:bg-[#6e1423] text-white font-semibold text-xs transition-colors">Read full guide</button>
-        </div>
-      </div>
-    </article>`).join('');
-}
-function openFormationModal(fid) {
-  const f = SITE_DATA.formations.find((x) => x.id === fid);
-  if (!f) return;
-  document.getElementById('formation-detail-tag').textContent = f.tag || 'Formation';
-  document.getElementById('formation-detail-title').textContent = f.name + ' formation';
-  document.getElementById('formation-detail-body').innerHTML = `
-    <div class="rounded-2xl overflow-hidden border border-stone-200/60 h-40 sm:h-48">${formationDiagram(f.id)}</div>
-    <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">${esc(f.text)}</p>
-    <div>
-      <span class="text-[10px] font-bold tracking-widest text-stone-500 uppercase block mb-2">OFFICER POSITIONS</span>
-      <p class="bg-[#f8f6f0] border border-stone-200/60 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-stone-700 leading-relaxed">${esc(f.positions)}</p>
-    </div>
-    <div>
-      <span class="text-[10px] font-bold tracking-widest text-stone-500 uppercase block mb-2">BEST FOR</span>
-      <div class="flex flex-wrap gap-1.5">
-        ${f.bestFor.map((x) => `<span class="text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 rounded-full px-3 py-1.5">${esc(x)}</span>`).join('')}
-      </div>
-    </div>
-    <div>
-      <span class="text-[10px] font-bold tracking-widest text-stone-500 uppercase block mb-2">WHAT IT FEELS LIKE FOR YOU</span>
-      <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">${esc(f.experience)}</p>
-    </div>
-    <p class="bg-rose-50 border border-rose-100 rounded-xl px-3.5 py-2.5 text-[11px] sm:text-xs text-stone-600 leading-relaxed"><strong class="text-stone-800">Planner note:</strong> ${esc(f.tip)}</p>
-    <div class="flex flex-col sm:flex-row gap-2 pt-2 border-t border-stone-100">
-      <button data-open-brief class="flex-1 py-2.5 sm:py-3 rounded-xl border border-stone-200 hover:bg-stone-50 font-medium text-xs text-stone-700 transition-colors">Book a briefing</button>
-      <button data-close-modal="modal-formation-detail" class="flex-1 py-2.5 sm:py-3 rounded-xl bg-[#80182a] hover:bg-[#6e1423] text-white font-medium text-xs sm:text-sm transition-colors text-center">Close</button>
-    </div>`;
-  openModal('modal-formation-detail');
-}
-function renderFormationList() {
-  const el = document.getElementById('formations-list');
-  if (!el) return;
-  el.innerHTML = SITE_DATA.formations.map((f) => `
-    <li class="bg-[#f8f6f0] border border-stone-200/60 rounded-2xl px-4 py-3 flex items-center justify-between gap-3">
-      <div class="min-w-0">
-        <h4 class="font-serif text-lg font-bold text-stone-900">${esc(f.name)}</h4>
-        <p class="text-xs text-stone-600 leading-relaxed">${esc(f.text)}</p>
-      </div>
-      <button data-show-formation="${f.id}" class="text-[11px] font-bold text-[#80182a] bg-white hover:bg-rose-50 border border-stone-200 px-3 py-2 rounded-full flex-shrink-0 transition-colors">Read guide</button>
-    </li>`).join('');
-}
+
+
+
+
 function renderFooterLists() {
   const el = document.getElementById('footer-services');
   if (el) {
@@ -1753,7 +1577,7 @@ function fillContactLinks() {
   document.querySelectorAll('[data-email-text]').forEach((el) => { el.textContent = SITE_DATA.email; });
 }
 
-// --- FORMATIONS are static cards + modals (no canvas demo) ---
+
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
   renderMediaSlots();
@@ -1763,10 +1587,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderFaq();
   renderAbout();
   renderGallery();
-  renderFormationList();
   renderFooterLists();
   fillContactLinks();
-  renderFormationCards();
   renderHomePreview();
 
   // One delegated click handler covers static and dynamic content
@@ -1846,18 +1668,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target.closest('[data-finder-back]')) { finder.step = Math.max(0, finder.step - 1); finder.picks.length = finder.step; renderFinderModal(); return; }
     if (e.target.closest('[data-finder-restart]')) { finder.step = 0; finder.picks = []; renderFinderModal(); return; }
 
-    // Timeline, FAQ, copy buttons, formation shortcut
+    // Timeline, FAQ, copy buttons
     if ((t = e.target.closest('[data-step-toggle]'))) { toggleStep(t.getAttribute('data-step-toggle')); return; }
     if ((t = e.target.closest('[data-faq-toggle]'))) { toggleFaq(t); return; }
     if ((t = e.target.closest('[data-copy]'))) {
       const what = t.getAttribute('data-copy');
       if (what === 'address') copyText(SITE_DATA.address, 'Address');
       if (what === 'email') copyText(SITE_DATA.email, 'Email address');
-      return;
-    }
-    if ((t = e.target.closest('[data-show-formation]'))) {
-      e.preventDefault();
-      openFormationModal(t.getAttribute('data-show-formation'));
       return;
     }
 
@@ -1900,7 +1717,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.openServiceModal = openServiceModal;
   window.openBriefModal = openBriefModal;
   window.openFinderModal = openFinderModal;
-  window.openFormationModal = openFormationModal;
   window.showToast = showToast;
 });
     </script>
