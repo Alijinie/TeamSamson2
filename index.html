@@ -1,0 +1,1847 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>TeamSamson | Close Protection, VIP Protection &amp; Protocol Services</title>
+    <meta name="description" content="TeamSamson provides close protection, VIP protection, protocol services, consulting and management from Redemption City, Mowe, Ogun State, Nigeria." />
+    <meta property="og:title" content="TeamSamson | Close Protection, VIP Protection &amp; Protocol Services" />
+    <meta property="og:description" content="Close protection, VIP protection, protocol services, consulting and management. Based at Redemption City, Mowe, Ogun State." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f7f4ed" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"LocalBusiness","name":"TeamSamson","description":"Close protection, VIP protection, protocol services, consulting and management.","email":"profoundhospitalities@gmail.com","telephone":"+2348055223392","address":{"@type":"PostalAddress","streetAddress":"Profound Groups Complex, Redemption City, Mowe","addressRegion":"Ogun State","addressCountry":"NG"}}
+    </script>
+
+  <!-- 1. Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Newsreader', 'Playfair Display', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- 2. Custom styles below the Tailwind import -->
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: #f7f4ed;
+      color: #1f1917;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color-scheme: light;
+    }
+    h1, h2, h3 { font-family: 'Newsreader', 'Playfair Display', Georgia, serif; }
+
+    /* Keyboard focus that reads on both cream and dark surfaces */
+    :focus-visible {
+      outline: 2px solid #80182a;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.9);
+    }
+
+    /* True glassmorphism system: translucent + blur + saturation */
+    .glass {
+      background: rgba(255, 255, 255, 0.62);
+      backdrop-filter: blur(18px) saturate(1.4);
+      -webkit-backdrop-filter: blur(18px) saturate(1.4);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      box-shadow: 0 8px 32px -8px rgba(45, 35, 25, 0.18), inset 0 1px 0 rgba(255,255,255,.6);
+    }
+    .glass-pill {
+      background: rgba(255, 255, 255, 0.68);
+      backdrop-filter: blur(20px) saturate(1.5);
+      -webkit-backdrop-filter: blur(20px) saturate(1.5);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 8px 28px -6px rgba(40, 30, 25, 0.16), inset 0 1px 0 rgba(255,255,255,.65);
+    }
+    .glass-dark {
+      background: rgba(28, 25, 23, 0.62);
+      backdrop-filter: blur(18px) saturate(1.3);
+      -webkit-backdrop-filter: blur(18px) saturate(1.3);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 12px 40px -10px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.12);
+    }
+    .glass-chip {
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(12px) saturate(1.3);
+      -webkit-backdrop-filter: blur(12px) saturate(1.3);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.35);
+    }
+    /* Ambient page backdrop so glass has something to refract */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(42rem 26rem at 8% -4%, rgba(128,24,42,.12), transparent 60%),
+        radial-gradient(38rem 24rem at 95% 6%, rgba(217,164,65,.14), transparent 60%),
+        radial-gradient(46rem 30rem at 50% 110%, rgba(128,24,42,.08), transparent 60%),
+        #f7f4ed;
+    }
+
+    .dot-pattern {
+      background-image: radial-gradient(rgba(255,255,255,.16) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+
+    /* Smooth hide scrollbars */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Infinite sliding image carousel ("marquee" gallery) */
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee-container {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+      mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee-scroll 44s linear infinite;
+    }
+    .marquee-container:hover .marquee-track { animation-play-state: paused; }
+
+    /* Polished responsive modals */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes modal-pop {
+      from { opacity: 0; transform: translateY(16px) scale(.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .animate-fadeIn { animation: fadeIn .35s ease both; }
+    .modal-backdrop { overflow-y: auto; overscroll-behavior: contain; }
+    .modal-panel {
+      animation: modal-pop .28s ease both;
+      max-height: 92vh;
+      max-height: 92dvh;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+    }
+    .modal-panel::-webkit-scrollbar { width: 6px; }
+    .modal-panel::-webkit-scrollbar-thumb { background: #d6cfc2; border-radius: 99px; }
+    .modal-hero-img { transition: transform .6s ease; }
+    .modal-panel:hover .modal-hero-img { transform: scale(1.04); }
+    @media (max-width: 380px) {
+      .modal-panel { border-radius: 1.1rem !important; }
+    }
+
+    /* Formation stage */
+    .stage { touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+    .stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+    .stage-principal {
+      position: absolute; left: 0; top: 0; width: 64px; height: 64px; margin: -32px 0 0 -32px;
+      border: 0; padding: 0; border-radius: 9999px; background: transparent;
+      display: grid; place-items: center; cursor: grab; touch-action: none; will-change: transform;
+    }
+    .stage-principal:active { cursor: grabbing; }
+    .stage-principal:focus-visible { outline: 3px solid #fff; outline-offset: 2px; box-shadow: none; }
+    .stage-core { width: 26px; height: 26px; border-radius: 9999px; background: #d9a441; box-shadow: 0 0 0 5px rgba(217,164,65,.3); }
+    .stage-principal::after {
+      content: ""; position: absolute; inset: 14px; border-radius: 9999px; border: 2px solid #d9a441;
+      opacity: 0; animation: stage-pulse 2.4s ease-out infinite; pointer-events: none;
+    }
+    @keyframes stage-pulse { 0% { transform: scale(.8); opacity: .7; } 100% { transform: scale(2.1); opacity: 0; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .marquee-track, .modal-panel, .animate-fadeIn, .stage-principal::after { animation: none !important; }
+      .marquee-container { overflow-x: auto; }
+    }
+  </style>
+  </head>
+  <body class="bg-[#f7f4ed] text-[#1f1917] min-h-screen flex flex-col selection:bg-[#80182a] selection:text-white overflow-x-hidden font-sans">
+    <!-- Floating Toast Notification Container -->
+    <div id="toast-container" class="fixed top-20 right-4 z-[60] flex flex-col gap-2 pointer-events-none max-w-[calc(100vw-2rem)]" role="status" aria-live="polite"></div>
+
+    <!-- Floating Top Navigation Pill -->
+    <header class="fixed top-3 sm:top-4 lg:top-5 inset-x-0 z-40 w-full max-w-6xl xl:max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 pointer-events-none">
+      <div class="glass-pill pointer-events-auto rounded-2xl sm:rounded-full px-4 sm:px-5 py-2.5 flex items-center justify-between gap-3 transition-all">
+        <!-- Logo & Title -->
+        <a href="#home" data-nav-tab="home" class="flex items-center gap-2.5 sm:gap-3 group min-w-0">
+          <div class="w-11 h-11 rounded-xl bg-[#80182a] text-white flex items-center justify-center shadow-sm flex-shrink-0 group-hover:scale-105 transition-transform">
+            <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <circle cx="16" cy="16" r="10.5" stroke="#f3c76b" stroke-width="1.2" stroke-dasharray="1.5 3" opacity=".8"/>
+              <circle cx="16" cy="16" r="4.2" fill="#d9a441"/>
+              <g fill="#fff"><circle cx="16" cy="4.5" r="2.4"/><circle cx="27.5" cy="16" r="2.4"/><circle cx="16" cy="27.5" r="2.4"/><circle cx="4.5" cy="16" r="2.4"/></g>
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <span class="font-serif font-bold text-stone-900 text-base sm:text-lg leading-none block">TeamSamson</span>
+            <span class="text-[9px] sm:text-[10px] text-[#80182a] font-bold tracking-widest uppercase block mt-0.5 truncate">PROTECTION &amp; PROTOCOL</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-1" aria-label="Main">
+          <button data-nav-tab="home" class="text-[#80182a] font-bold border-b-2 border-[#80182a] pb-0.5 px-2.5 transition-colors cursor-pointer text-xs" aria-current="page">Home</button>
+          <button data-nav-tab="services" class="text-stone-600 hover:text-stone-900 font-medium px-2.5 transition-colors cursor-pointer text-xs">Services</button>
+          <button data-nav-tab="process" class="text-stone-600 hover:text-stone-900 font-medium px-2.5 transition-colors cursor-pointer text-xs">Process</button>
+          <button data-nav-tab="about" class="text-stone-600 hover:text-stone-900 font-medium px-2.5 transition-colors cursor-pointer text-xs">About</button>
+          <button data-nav-tab="contact" class="text-stone-600 hover:text-stone-900 font-medium px-2.5 transition-colors cursor-pointer text-xs">Contact</button>
+        </nav>
+
+        <!-- Top Right Actions -->
+        <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+          <a data-wa-link href="#" target="_blank" rel="noopener" class="hidden sm:inline-flex text-[11px] font-semibold text-stone-600 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 px-3 py-1.5 rounded-full transition-colors">WhatsApp</a>
+          <button data-open-brief class="bg-[#80182a] hover:bg-[#6e1423] text-white text-[11px] sm:text-xs font-semibold px-3.5 sm:px-4 py-2 rounded-full shadow-sm transition-all hover:scale-[1.02] flex items-center gap-1 whitespace-nowrap">
+            <span>Book a briefing</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Views Container -->
+    <main id="main" class="flex-1 w-full max-w-6xl xl:max-w-7xl mx-auto pt-20 sm:pt-24 lg:pt-28 pb-28 px-3.5 sm:px-6 lg:px-8 min-w-0">
+
+      <!-- ==================================================== -->
+      <!-- TAB 1: HOME TAB                                      -->
+      <!-- ==================================================== -->
+      <section id="tab-home" class="tab-view space-y-6 sm:space-y-8 animate-fadeIn">
+        <!-- Hero Card -->
+        <div class="relative rounded-3xl lg:rounded-[2rem] overflow-hidden min-h-[460px] sm:min-h-[500px] lg:min-h-[560px] p-6 sm:p-10 lg:p-12 flex flex-col justify-between text-white shadow-xl border border-white/20 bg-stone-950">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#80182a] via-[#4a0f1c] to-stone-950"></div>
+          <div class="absolute inset-0 dot-pattern opacity-70"></div>
+          <svg class="absolute -right-20 -top-14 w-[24rem] sm:w-[32rem] opacity-25 pointer-events-none" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+            <circle cx="100" cy="100" r="78" stroke="#fff" stroke-width="1" stroke-dasharray="2 6"/>
+            <path d="M100 22 178 100 100 178 22 100Z" stroke="#fff" stroke-width="1"/>
+            <circle cx="100" cy="100" r="18" fill="#d9a441"/>
+            <g fill="#fff"><circle cx="100" cy="22" r="8"/><circle cx="178" cy="100" r="8"/><circle cx="100" cy="178" r="8"/><circle cx="22" cy="100" r="8"/></g>
+          </svg>
+          <!-- HERO PHOTO: set IMAGES.hero in the script to show a photo here -->
+          <div data-media="hero" class="absolute inset-0"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
+
+          <!-- Top Badge -->
+          <div class="relative z-10 self-start">
+            <span class="glass-chip inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest text-rose-100 shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              REDEMPTION CITY · MOWE · OGUN STATE
+            </span>
+          </div>
+
+          <!-- Hero Bottom Details -->
+          <div class="relative z-10 space-y-3 pt-24 sm:pt-32 lg:pt-40 max-w-2xl">
+            <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[0.95]">
+              TeamSamson
+            </h1>
+            <p class="font-serif italic text-rose-200 text-xl sm:text-2xl">
+              Stay in the middle. We handle the rest.
+            </p>
+            <p class="text-stone-200 text-xs sm:text-sm lg:text-base max-w-xl leading-relaxed">
+              Close protection, VIP protection, protocol services, consulting and management for individuals, families, organisations and event hosts, from Redemption City, Mowe, Ogun State.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <button data-open-brief class="glass bg-white/85 hover:bg-white text-stone-900 px-5 sm:px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all shadow-md flex items-center gap-1.5">
+                <span>Book a briefing</span>
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+              <a data-wa-link href="#" target="_blank" rel="noopener" class="glass-chip hover:bg-white/30 text-white px-5 sm:px-6 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-300 animate-ping"></span>
+                <span>Chat on WhatsApp</span>
+              </a>
+            </div>
+
+            <!-- Service quick chips (filled by JS) -->
+            <div id="hero-service-chips" class="flex flex-wrap items-center gap-2 pt-1"></div>
+          </div>
+        </div>
+
+        <!-- Glass Finder Card -->
+        <div class="glass rounded-3xl p-6 sm:p-7 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4 lg:gap-8">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="inline-block w-2 h-2 rounded-full bg-[#80182a]"></span>
+              <span class="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#80182a] uppercase">NOT SURE WHERE TO START?</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-stone-900">Answer three short questions</h3>
+            <p class="text-xs sm:text-sm text-stone-600">We will point you to the service that fits, then you can book a briefing.</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-3 flex-shrink-0">
+            <button data-open-finder class="bg-[#80182a] hover:bg-[#6e1423] text-white px-4 sm:px-5 py-3 rounded-2xl text-xs font-semibold transition-all shadow-sm">Find the right service</button>
+            <button data-open-brief class="bg-white hover:bg-stone-50 border border-stone-200 text-stone-800 px-4 sm:px-5 py-3 rounded-2xl text-xs font-semibold transition-all">Book a briefing</button>
+          </div>
+        </div>
+
+        <!-- At-a-Glance Stats Strip -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          <div class="glass rounded-2xl p-4 sm:p-5 text-center space-y-1">
+            <span class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 block">5</span>
+            <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">Services</span>
+          </div>
+          <div class="glass rounded-2xl p-4 sm:p-5 text-center space-y-1">
+            <span class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 block">4</span>
+            <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">Formations to try</span>
+          </div>
+          <div class="glass rounded-2xl p-4 sm:p-5 text-center space-y-1">
+            <span class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 block">5</span>
+            <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">Steps to deployment</span>
+          </div>
+          <div class="glass rounded-2xl p-4 sm:p-5 text-center space-y-1">
+            <span class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 block">3</span>
+            <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">Ways to reach us</span>
+          </div>
+        </div>
+
+        <!-- Formation Demo -->
+        <div class="space-y-4">
+          <div class="space-y-2">
+            <span class="text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">SEE IT MOVE</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">You move. The team moves with you.</h2>
+            <p class="text-stone-600 text-xs sm:text-sm max-w-2xl leading-relaxed">
+              Drag the gold dot to walk the protected person across the floor. Each officer faces outward and keeps position as you go. Switch formations to see the team reshape.
+            </p>
+          </div>
+
+          <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-stone-900 to-stone-950 border border-stone-800 shadow-xl">
+            <div id="stage" class="stage relative h-[340px] sm:h-[400px] lg:h-[460px]">
+              <canvas id="fx" aria-hidden="true"></canvas>
+              <button type="button" id="principal" class="stage-principal" aria-label="The protected person. Drag, or use the arrow keys, and the protection team follows."><span class="stage-core"></span></button>
+              <p id="stage-hint" class="glass-chip absolute left-4 top-4 text-white text-[11px] font-semibold px-3 py-1.5 rounded-full pointer-events-none transition-opacity duration-500">Drag the gold dot</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div id="formation-pills" class="glass flex flex-wrap gap-2 p-1.5 rounded-2xl w-fit max-w-full" role="radiogroup" aria-label="Formation">
+              <button type="button" role="radio" aria-checked="true" tabindex="0" data-formation="diamond" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#80182a] text-white shadow-sm">Diamond</button>
+              <button type="button" role="radio" aria-checked="false" tabindex="-1" data-formation="box" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#f8f6f0] text-stone-600 hover:bg-stone-200">Box</button>
+              <button type="button" role="radio" aria-checked="false" tabindex="-1" data-formation="wedge" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#f8f6f0] text-stone-600 hover:bg-stone-200">Wedge</button>
+              <button type="button" role="radio" aria-checked="false" tabindex="-1" data-formation="column" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#f8f6f0] text-stone-600 hover:bg-stone-200">Column</button>
+            </div>
+            <button data-open-modal="modal-formations" class="text-xs font-bold text-[#80182a] hover:underline underline-offset-4 inline-flex items-center gap-1">
+              <span>Why formations?</span>
+              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Gallery Marquee -->
+        <div class="space-y-4">
+          <div class="space-y-1">
+            <span class="text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">IN THE FIELD</span>
+            <h2 class="font-serif text-3xl font-bold text-stone-900">Where you will see us</h2>
+            <p class="text-xs sm:text-sm text-stone-600">Weddings, conferences, worship gatherings, arrivals and everyday movement.</p>
+          </div>
+          <div class="marquee-container rounded-2xl">
+            <div id="gallery-track" class="marquee-track"></div>
+          </div>
+        </div>
+
+        <!-- Closing CTA -->
+        <div class="relative rounded-3xl overflow-hidden bg-[#80182a] text-white p-7 sm:p-10 flex flex-col md:flex-row md:items-center justify-between gap-5">
+          <div class="absolute inset-0 dot-pattern opacity-40"></div>
+          <div class="relative space-y-1.5 max-w-xl">
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold leading-tight">Ready to talk it through?</h2>
+            <p class="text-rose-100 text-xs sm:text-sm leading-relaxed">A briefing is a short call or chat. Tell us who, where and when, and we take it from there.</p>
+          </div>
+          <div class="relative flex flex-wrap gap-3 flex-shrink-0">
+            <button data-open-brief class="bg-white hover:bg-stone-100 text-stone-900 px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-colors">Book a briefing</button>
+            <a data-wa-link href="#" target="_blank" rel="noopener" class="glass-chip hover:bg-white/30 text-white px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-colors">Chat on WhatsApp</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================== -->
+      <!-- TAB 2: SERVICES TAB                                  -->
+      <!-- ==================================================== -->
+      <section id="tab-services" class="tab-view hidden space-y-8 animate-fadeIn">
+        <div class="space-y-2">
+          <span class="text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">SERVICES</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">Five ways we keep you covered</h2>
+          <p class="text-stone-600 text-xs sm:text-sm max-w-2xl leading-relaxed">
+            From a single officer at your side to a supervised team across a whole estate. Tap any service to see what is included, when people use it and what we need from you.
+          </p>
+          <p class="font-serif italic text-[13px] sm:text-sm text-stone-500 leading-relaxed max-w-2xl">Prepared before you arrive. Discreet while you are there.</p>
+        </div>
+
+        <!-- Service Cards (filled by JS) -->
+        <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5"></div>
+
+        <!-- Finder Card -->
+        <div class="glass rounded-3xl p-6 sm:p-7 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="space-y-1 max-w-xl">
+            <span class="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">NOT SURE WHICH FITS?</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">Let us point you in the right direction</h3>
+            <p class="text-xs sm:text-sm text-stone-600">Three questions about who, where and what you already have in place.</p>
+          </div>
+          <button data-open-finder class="bg-[#80182a] hover:bg-[#6e1423] text-white px-5 py-3 rounded-2xl text-xs font-semibold transition-all shadow-sm flex-shrink-0">Find the right service</button>
+        </div>
+      </section>
+
+      <!-- ==================================================== -->
+      <!-- TAB 3: PROCESS TAB                                   -->
+      <!-- ==================================================== -->
+      <section id="tab-process" class="tab-view hidden space-y-8 animate-fadeIn">
+        <div class="space-y-2">
+          <span class="text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">PROCESS</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">From first message to review</h2>
+          <p class="text-stone-600 text-xs sm:text-sm max-w-2xl leading-relaxed">Every assignment follows the same five steps, whether it is one evening or a long-term arrangement. Tap a step to read it.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-start">
+          <div class="lg:col-span-3">
+            <ol id="steps-list" class="relative space-y-4 before:absolute before:left-[19px] before:top-4 before:bottom-4 before:w-px before:bg-stone-300"></ol>
+          </div>
+          <aside class="lg:col-span-2 space-y-4 lg:sticky lg:top-28">
+            <div class="glass rounded-3xl p-6 space-y-3">
+              <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">HAVE READY FOR STEP 1</span>
+              <ul class="space-y-2 text-xs sm:text-sm text-stone-700">
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-[#80182a] flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>The date and time, or the period you need cover</span></li>
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-[#80182a] flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>The venue, address or route</span></li>
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-[#80182a] flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>How many people need protection or protocol support</span></li>
+                <li class="flex items-start gap-2"><svg class="w-3.5 h-3.5 text-[#80182a] flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Any security or event team already in place</span></li>
+              </ul>
+              <button data-open-brief class="w-full bg-[#80182a] hover:bg-[#6e1423] text-white py-3 rounded-xl font-semibold text-xs sm:text-sm transition-colors">Book a briefing</button>
+            </div>
+          </aside>
+        </div>
+
+        <!-- FAQ -->
+        <div class="space-y-4">
+          <div class="space-y-1">
+            <span class="text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">QUESTIONS</span>
+            <h2 class="font-serif text-3xl font-bold text-stone-900">Before you get in touch</h2>
+          </div>
+          <div id="faq-list" class="space-y-2 max-w-3xl"></div>
+        </div>
+      </section>
+
+      <!-- ==================================================== -->
+      <!-- TAB 4: ABOUT TAB                                     -->
+      <!-- ==================================================== -->
+      <section id="tab-about" class="tab-view hidden space-y-8 animate-fadeIn">
+        <div class="space-y-2">
+          <span class="text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">ABOUT TEAMSAMSON</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">Built around the person in the middle</h2>
+          <p class="text-stone-600 text-xs sm:text-sm max-w-2xl leading-relaxed">
+            TeamSamson is a protection and protocol agency at Redemption City, Mowe, Ogun State. We work with people who need trained officers close by and a plan behind them.
+          </p>
+        </div>
+
+        <!-- Statement card with team photo slot -->
+        <div class="bg-white rounded-3xl overflow-hidden border border-stone-200/80 shadow-sm grid grid-cols-1 lg:grid-cols-2">
+          <!-- ABOUT PHOTO: set IMAGES.about in the script -->
+          <div data-media="about" class="h-52 sm:h-64 lg:h-full min-h-[14rem]"></div>
+          <div class="p-6 sm:p-8 space-y-4">
+            <div>
+              <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">OUR APPROACH</span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 mt-1">Close protection is quiet work</h3>
+            </div>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">The best detail is the one nobody notices. Officers fit the setting, whether that is a boardroom, a place of worship or a wedding, and they keep their attention on the space around you rather than on themselves.</p>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">Behind every detail is a plan: routes checked, venues walked, contacts agreed and roles clear before anyone arrives.</p>
+            <blockquote class="border-l-4 border-[#80182a] pl-4 italic text-stone-600 text-xs sm:text-sm">Stay in the middle. We handle the rest.</blockquote>
+          </div>
+        </div>
+
+        <!-- Principles -->
+        <div class="space-y-4">
+          <div class="space-y-1">
+            <span class="text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">HOW WE WORK</span>
+            <h2 class="font-serif text-3xl font-bold text-stone-900">Three principles</h2>
+          </div>
+          <div id="principles-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+        </div>
+
+        <!-- Who we work with -->
+        <div class="space-y-4">
+          <div class="space-y-1">
+            <span class="text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">CLIENTS</span>
+            <h2 class="font-serif text-3xl font-bold text-stone-900">Who we work with</h2>
+          </div>
+          <div id="clients-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"></div>
+        </div>
+
+        <!-- Situations -->
+        <div class="glass rounded-3xl p-6 sm:p-7 space-y-3">
+          <span class="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">WHERE WE WORK</span>
+          <div id="situations-chips" class="flex flex-wrap gap-2"></div>
+        </div>
+      </section>
+
+      <!-- ==================================================== -->
+      <!-- TAB 5: CONTACT TAB                                   -->
+      <!-- ==================================================== -->
+      <section id="tab-contact" class="tab-view hidden space-y-6 sm:space-y-8 animate-fadeIn">
+        <div class="space-y-2">
+          <span class="text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">CONTACT</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">Talk to TeamSamson</h2>
+          <p class="text-stone-600 text-xs sm:text-sm max-w-2xl leading-relaxed">Message us on WhatsApp or send an email. We will reply to arrange a briefing.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-5 items-start">
+          <div class="lg:col-span-3 space-y-3">
+            <a data-wa-link href="#" target="_blank" rel="noopener" class="glass rounded-3xl p-5 sm:p-6 flex items-center gap-4 hover:-translate-y-0.5 transition-transform">
+              <span class="w-12 h-12 rounded-2xl bg-[#80182a] text-white flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">WHATSAPP</span>
+                <span class="font-serif text-xl sm:text-2xl font-bold text-stone-900 block" data-phone-text></span>
+              </span>
+              <svg class="w-4 h-4 text-stone-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+
+            <div class="glass rounded-3xl p-5 sm:p-6 flex items-center gap-4">
+              <span class="w-12 h-12 rounded-2xl bg-[#80182a] text-white flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </span>
+              <a data-mail-link href="#" class="min-w-0 flex-1">
+                <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">EMAIL</span>
+                <span class="font-serif text-lg sm:text-2xl font-bold text-stone-900 block break-all" data-email-text></span>
+              </a>
+              <button data-copy="email" class="text-[11px] font-bold text-stone-700 bg-white hover:bg-stone-100 border border-stone-200 px-3 py-2 rounded-full flex-shrink-0">Copy</button>
+            </div>
+
+            <button data-open-modal="modal-place" class="w-full text-left glass rounded-3xl p-5 sm:p-6 flex items-center gap-4 hover:-translate-y-0.5 transition-transform">
+              <span class="w-12 h-12 rounded-2xl bg-[#80182a] text-white flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">OFFICE</span>
+                <span class="font-serif text-lg sm:text-xl font-bold text-stone-900 block leading-snug">Profound Groups Complex, Redemption City, Mowe, Ogun State</span>
+              </span>
+              <svg class="w-4 h-4 text-stone-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+
+          <aside class="lg:col-span-2 space-y-4">
+            <div class="bg-white rounded-3xl overflow-hidden border border-stone-200/80 shadow-sm">
+              <!-- OFFICE PHOTO: set IMAGES.office in the script -->
+              <div data-media="office" class="h-44 sm:h-52"></div>
+              <div class="p-5 sm:p-6 space-y-3">
+                <h3 class="font-serif text-2xl font-bold text-stone-900">Start with a briefing</h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">Choose your services, tell us who, where and when, then send it to us on WhatsApp or by email.</p>
+                <button data-open-brief class="w-full bg-[#80182a] hover:bg-[#6e1423] text-white py-3 rounded-xl font-semibold text-xs sm:text-sm transition-colors">Book a briefing</button>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating WhatsApp button -->
+    <a data-wa-link href="#" target="_blank" rel="noopener" aria-label="Chat with TeamSamson on WhatsApp" class="fixed right-3.5 bottom-24 md:bottom-6 md:right-6 z-40 w-12 h-12 rounded-full glass-dark text-white flex items-center justify-center hover:scale-105 transition-transform">
+      <svg class="w-5 h-5 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg>
+    </a>
+
+    <!-- Floating Mobile/Tablet Bottom Navigation Capsule Dock -->
+    <nav class="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] inset-x-3 mx-auto w-fit max-w-[calc(100vw-1.5rem)] z-40 text-white pointer-events-auto md:hidden" aria-label="Sections">
+      <div class="glass-dark rounded-full px-2 py-1.5 flex items-center gap-1 overflow-x-auto no-scrollbar max-w-full">
+        <button data-dock-tab="home" class="dock-btn w-9 h-9 rounded-full bg-stone-800 text-white flex items-center justify-center transition-all text-xs font-semibold shadow-inner flex-shrink-0" aria-label="Home">
+          <svg class="dock-icon w-4 h-4 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span class="dock-label hidden text-white">Home</span>
+        </button>
+        <button data-dock-tab="services" class="dock-btn h-9 px-3 rounded-full text-stone-300 hover:text-white flex items-center justify-center transition-all text-xs font-medium flex-shrink-0">
+          <svg class="dock-icon w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6z"/></svg>
+          <span class="dock-label">Services</span>
+        </button>
+        <button data-dock-tab="process" class="dock-btn h-9 px-3 rounded-full text-stone-300 hover:text-white flex items-center justify-center transition-all text-xs font-medium flex-shrink-0">
+          <svg class="dock-icon w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg>
+          <span class="dock-label">Process</span>
+        </button>
+        <button data-dock-tab="about" class="dock-btn h-9 px-3 rounded-full text-stone-300 hover:text-white flex items-center justify-center transition-all text-xs font-medium flex-shrink-0">
+          <svg class="dock-icon w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span class="dock-label">About</span>
+        </button>
+        <button data-dock-tab="contact" class="dock-btn h-9 px-3 rounded-full text-stone-300 hover:text-white flex items-center justify-center transition-all text-xs font-medium flex-shrink-0">
+          <svg class="dock-icon w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="dock-label">Contact</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="bg-[#191412] text-stone-300 pt-16 pb-28 md:pb-20 border-t border-stone-800 mt-10">
+      <div class="max-w-6xl xl:max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-[#80182a] flex items-center justify-center text-white shadow-sm flex-shrink-0">
+                <svg class="w-6 h-6" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                  <circle cx="16" cy="16" r="4.2" fill="#d9a441"/>
+                  <g fill="#fff"><circle cx="16" cy="4.5" r="2.4"/><circle cx="27.5" cy="16" r="2.4"/><circle cx="16" cy="27.5" r="2.4"/><circle cx="4.5" cy="16" r="2.4"/></g>
+                </svg>
+              </div>
+              <span class="font-serif font-bold text-white text-lg">TeamSamson</span>
+            </div>
+            <p class="text-xs sm:text-sm text-stone-400 leading-relaxed max-w-sm">Close protection, VIP protection, protocol services, consulting and management from Redemption City, Mowe, Ogun State.</p>
+          </div>
+          <div class="space-y-3">
+            <span class="text-[10px] font-bold tracking-widest text-amber-300/90 uppercase block">SERVICES</span>
+            <ul id="footer-services" class="space-y-2 text-xs sm:text-sm"></ul>
+          </div>
+          <div class="space-y-3">
+            <span class="text-[10px] font-bold tracking-widest text-amber-300/90 uppercase block">CONTACT</span>
+            <ul class="space-y-2 text-xs sm:text-sm">
+              <li><a data-wa-link href="#" target="_blank" rel="noopener" class="hover:text-white transition-colors" data-phone-text></a></li>
+              <li><a data-mail-link href="#" class="hover:text-white transition-colors break-all" data-email-text></a></li>
+              <li class="text-stone-400">Profound Groups Complex, Redemption City, Mowe, Ogun State</li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-stone-800 pt-6 text-[11px] text-stone-500">&copy; 2026 TeamSamson. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <!-- ==================================================== -->
+    <!-- MODALS                                               -->
+    <!-- ==================================================== -->
+
+    <!-- Modal 1: Service Detail (filled by openServiceModal) -->
+    <div id="modal-service" class="modal-backdrop hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-start sm:items-center justify-center p-3 sm:p-6 py-6 sm:py-10" role="dialog" aria-modal="true" aria-labelledby="service-modal-title">
+      <div class="modal-panel bg-white rounded-2xl sm:rounded-3xl max-w-lg w-full my-auto border border-stone-200 shadow-2xl overflow-hidden">
+        <div class="relative h-40 sm:h-52 overflow-hidden flex-shrink-0 bg-stone-900">
+          <div id="service-modal-image" class="absolute inset-0"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent"></div>
+          <button data-close-modal="modal-service" aria-label="Close" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur text-white text-lg leading-none transition-colors">×</button>
+          <div class="absolute bottom-3 left-4 right-4 sm:left-6 sm:right-6">
+            <span id="service-modal-tag" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md border border-white/30 text-white"></span>
+            <h3 id="service-modal-title" class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1.5 leading-tight"></h3>
+          </div>
+        </div>
+        <div id="service-modal-body" class="p-4 sm:p-6 space-y-4"></div>
+      </div>
+    </div>
+
+    <!-- Modal 2: Book a Briefing (steps rendered by JS) -->
+    <div id="modal-brief" class="modal-backdrop hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-start sm:items-center justify-center p-3 sm:p-6 py-6 sm:py-10" role="dialog" aria-modal="true" aria-labelledby="brief-modal-title">
+      <div class="modal-panel bg-white rounded-2xl sm:rounded-3xl max-w-lg w-full my-auto border border-stone-200 shadow-2xl overflow-hidden">
+        <div class="relative h-32 sm:h-40 overflow-hidden flex-shrink-0 bg-gradient-to-br from-[#80182a] via-[#4a0f1c] to-stone-950">
+          <div class="absolute inset-0 dot-pattern opacity-70"></div>
+          <div data-media="modals.brief" class="absolute inset-0"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent"></div>
+          <button data-close-modal="modal-brief" aria-label="Close" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur text-white text-lg leading-none transition-colors">×</button>
+          <div class="absolute bottom-3 left-4 right-4 sm:left-6 sm:right-6">
+            <span id="brief-modal-tag" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md border border-white/30 text-white">Step 1 of 3</span>
+            <h3 id="brief-modal-title" class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1.5 leading-tight">Book a briefing</h3>
+          </div>
+        </div>
+        <div id="brief-modal-body" class="p-4 sm:p-6 space-y-4"></div>
+      </div>
+    </div>
+
+    <!-- Modal 3: Service Finder (questions rendered by JS) -->
+    <div id="modal-finder" class="modal-backdrop hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-start sm:items-center justify-center p-3 sm:p-6 py-6 sm:py-10" role="dialog" aria-modal="true" aria-labelledby="finder-modal-title">
+      <div class="modal-panel bg-white rounded-2xl sm:rounded-3xl max-w-lg w-full my-auto border border-stone-200 shadow-2xl overflow-hidden">
+        <div class="relative h-32 sm:h-40 overflow-hidden flex-shrink-0 bg-gradient-to-br from-[#80182a] via-[#4a0f1c] to-stone-950">
+          <div class="absolute inset-0 dot-pattern opacity-70"></div>
+          <div data-media="modals.finder" class="absolute inset-0"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent"></div>
+          <button data-close-modal="modal-finder" aria-label="Close" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur text-white text-lg leading-none transition-colors">×</button>
+          <div class="absolute bottom-3 left-4 right-4 sm:left-6 sm:right-6">
+            <span id="finder-modal-tag" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md border border-white/30 text-white">Question 1 of 3</span>
+            <h3 id="finder-modal-title" class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1.5 leading-tight">Find the right service</h3>
+          </div>
+        </div>
+        <div id="finder-modal-body" class="p-4 sm:p-6 space-y-4"></div>
+      </div>
+    </div>
+
+    <!-- Modal 4: Why Formations -->
+    <div id="modal-formations" class="modal-backdrop hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-start sm:items-center justify-center p-3 sm:p-6 py-6 sm:py-10" role="dialog" aria-modal="true" aria-labelledby="formations-modal-title">
+      <div class="modal-panel bg-white rounded-2xl sm:rounded-3xl max-w-lg w-full my-auto border border-stone-200 shadow-2xl overflow-hidden">
+        <div class="relative h-32 sm:h-40 overflow-hidden flex-shrink-0 bg-gradient-to-br from-[#80182a] via-[#4a0f1c] to-stone-950">
+          <div class="absolute inset-0 dot-pattern opacity-70"></div>
+          <div data-media="modals.formations" class="absolute inset-0"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent"></div>
+          <button data-close-modal="modal-formations" aria-label="Close" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur text-white text-lg leading-none transition-colors">×</button>
+          <div class="absolute bottom-3 left-4 right-4 sm:left-6 sm:right-6">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md border border-white/30 text-white">Formations</span>
+            <h3 id="formations-modal-title" class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1.5 leading-tight">Why the team changes shape</h3>
+          </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4">
+          <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">A protection team does not stand still around you. It changes formation to suit the space, the crowd and how fast you are moving.</p>
+          <ul id="formations-list" class="space-y-2"></ul>
+          <p class="bg-[#f8f6f0] border border-stone-200/60 rounded-xl px-3.5 py-2.5 text-[11px] sm:text-xs text-stone-600 leading-relaxed">The demo uses four officers. The real size of a team depends on the assessment.</p>
+          <div class="flex flex-col sm:flex-row gap-2 pt-2 border-t border-stone-100">
+            <button data-open-brief class="flex-1 py-2.5 sm:py-3 rounded-xl border border-stone-200 hover:bg-stone-50 font-medium text-xs text-stone-700 transition-colors">Book a briefing</button>
+            <button data-close-modal="modal-formations" class="flex-1 py-2.5 sm:py-3 rounded-xl bg-[#80182a] hover:bg-[#6e1423] text-white font-medium text-xs sm:text-sm transition-colors text-center">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 5: Our Office -->
+    <div id="modal-place" class="modal-backdrop hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-start sm:items-center justify-center p-3 sm:p-6 py-6 sm:py-10" role="dialog" aria-modal="true" aria-labelledby="place-modal-title">
+      <div class="modal-panel bg-white rounded-2xl sm:rounded-3xl max-w-lg w-full my-auto border border-stone-200 shadow-2xl overflow-hidden">
+        <div class="relative h-36 sm:h-48 overflow-hidden flex-shrink-0 bg-gradient-to-br from-[#80182a] via-[#4a0f1c] to-stone-950">
+          <div data-media="office" class="absolute inset-0"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent"></div>
+          <button data-close-modal="modal-place" aria-label="Close" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur text-white text-lg leading-none transition-colors">×</button>
+          <div class="absolute bottom-3 left-4 right-4 sm:left-6 sm:right-6">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md border border-white/30 text-white">Office</span>
+            <h3 id="place-modal-title" class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1.5 leading-tight">Visit TeamSamson</h3>
+          </div>
+        </div>
+        <div class="p-4 sm:p-6 space-y-4">
+          <p class="font-serif text-xl sm:text-2xl font-bold text-stone-900 leading-snug">Profound Groups Complex,<br>Redemption City, Mowe,<br>Ogun State</p>
+          <p class="bg-rose-50 border border-rose-100 rounded-xl px-3.5 py-2.5 text-[11px] sm:text-xs text-stone-600 leading-relaxed">Planning a visit? Message us first so we can confirm the best time.</p>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <a data-maps-link href="#" target="_blank" rel="noopener" class="flex-1 py-2.5 sm:py-3 rounded-xl bg-[#80182a] hover:bg-[#6e1423] text-white font-medium text-xs sm:text-sm transition-colors text-center">Open in Google Maps</a>
+            <button data-copy="address" class="flex-1 py-2.5 sm:py-3 rounded-xl border border-stone-200 hover:bg-stone-50 font-medium text-xs text-stone-700 transition-colors">Copy address</button>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-2 pt-2 border-t border-stone-100">
+            <a data-wa-link data-wa-text="Hello TeamSamson, I would like to visit your office." href="#" target="_blank" rel="noopener" class="flex-1 py-2.5 sm:py-3 rounded-xl border border-stone-200 hover:bg-stone-50 font-medium text-xs text-stone-700 transition-colors text-center">Message us on WhatsApp</a>
+            <button data-close-modal="modal-place" class="flex-1 py-2.5 sm:py-3 rounded-xl bg-stone-900 hover:bg-stone-800 text-white font-medium text-xs sm:text-sm transition-colors text-center">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+// TeamSamson - Vanilla JavaScript Application Logic
+// Single Page Application (SPA) Controller
+
+// --- IMAGE SLOTS ---
+// Every photo on the site is set here. Leave a value as '' to show the branded placeholder,
+// or point it at a file, e.g. 'images/hero.jpg'. Nothing else needs to change.
+const IMAGES = {
+  hero: 'hero.jpg',                    // full-bleed photo behind the home hero card
+  about: 'about.jpg',                   // About tab, statement card
+  office: 'office.jpg',                  // Contact tab card and the office modal
+  modals: {                    // header photos for the small modals
+    brief: 'brief.jpg',
+    finder: 'finder.jpg',
+    formations: 'formations.jpg'
+  },
+  gallery: ['1.jpg', '2.jpg', 'hero.jpg', 'finder.jpg', '5.jpg', '6.jpg'],   // home gallery strip (captions in SITE_DATA.galleryCaptions)
+  services: {                  // card = photo on the service card, modal = header photo, thumbs = two small photos inside the modal
+    close:      { card: 'close3', modal: 'close.jpg', thumbs: ['1.jpg', 'close2.jpg'] },
+    vip:        { card: 'formations.jpg', modal: 'about.jpg', thumbs: ['hero.jpg', 'office.jpg'] },
+    protocol:   { card: '2.jpg', modal: 'protoco.jpg', thumbs: ['pro.jpg', 'hero.jpg'] },
+    consulting: { card: 'consulting.jpg', modal: 'consl.jpg', thumbs: ['co.jpg', 'management.jpg'] },
+    management: { card: 'management.jpg', modal: 'cons.jpg', thumbs: ['office.jpg', 'vip3.jpg'] }
+  }
+};
+
+// --- DATA STORE ---
+const SITE_DATA = {
+  name: 'TeamSamson',
+  phoneDisplay: '+234 805 522 3392',
+  phoneIntl: '2348055223392',
+  email: 'profoundhospitalities@gmail.com',
+  address: 'Profound Groups Complex, Redemption City, Mowe, Ogun State',
+  services: [
+    {
+      id: 'close',
+      category: 'PERSONAL',
+      name: 'Close protection',
+      nameLower: 'close protection',
+      short: 'Officers who stay within reach of you through your day.',
+      why: 'Officers who stay near you through your day.',
+      description: 'Trained protection officers stay close to you wherever you go, on foot and in transit, and deal with problems before they reach you. The team is sized and dressed for the setting, whether that is a boardroom, a place of worship, a market or a wedding.',
+      includes: ['Personal protection for one person or a family', 'Advance checks of venues and routes before you arrive', 'Escort on foot and in transit', 'A team lead who is your single point of contact'],
+      situations: ['Daily movement', 'Business meetings', 'Public appearances', 'Family events', 'Travel'],
+      needFromYou: ['Your schedule and the places you will be', 'Who travels with you', 'Any concerns or past incidents we should know about'],
+      approach: 'We begin with your routine, not a template. The team is built around how you actually move through a day.'
+    },
+    {
+      id: 'vip',
+      category: 'PUBLIC FIGURES',
+      name: 'VIP protection',
+      nameLower: 'VIP protection',
+      short: 'Arrival, movement and protection for high-profile guests.',
+      why: 'Arrival, movement and protection for high-profile people.',
+      description: 'Protection for public figures, executives, dignitaries and visiting guests. We plan how the person arrives, moves through the venue and leaves, and we coordinate with the host and any security already on site.',
+      includes: ['Arrival and departure control', 'Protection through crowds and public areas', 'Coordination with venue and host security', 'Access control around the person and their holding area'],
+      situations: ['Conferences and conventions', 'Launches and receptions', 'Worship gatherings', 'Community and political events', 'Media appearances'],
+      needFromYou: ['The programme or run of events', 'The venue and its own security arrangements', 'The guest list or expected crowd size'],
+      approach: 'We work with the host, not around them. One plan covers arrival, movement, holding and exit.'
+    },
+    {
+      id: 'protocol',
+      category: 'HOSPITALITY',
+      name: 'Protocol services',
+      nameLower: 'protocol services',
+      short: 'Reception, guiding and order of events for your guests.',
+      why: 'Reception, guiding and order of events for your guests.',
+      description: 'Protocol keeps an event in the right order and makes guests feel looked after. Our team receives guests, guides them, manages seating and precedence, and keeps the host informed as the programme moves.',
+      includes: ['Guest reception and meet-and-greet', 'Guiding and escort inside the venue', 'Seating plans and order of precedence', 'Liaison between host, guests and programme'],
+      situations: ['Weddings and ceremonies', 'Corporate events', 'Visiting delegations', 'Conferences', 'Funerals and memorial services'],
+      needFromYou: ['The programme and timings', 'The guest list and any special guests', 'Seating or precedence preferences'],
+      approach: 'Good protocol is felt, not seen. Guests arrive, are welcomed, know where to go and never wonder what happens next.'
+    },
+    {
+      id: 'consulting',
+      category: 'ADVISORY',
+      name: 'Consulting',
+      nameLower: 'consulting',
+      short: 'A clear view of your risks and a plan to deal with them.',
+      why: 'A review of your risks and a plan to deal with them.',
+      description: 'Advice for people and organisations who want to understand their exposure before something happens. We review your people, places and routines, then turn the findings into a plan you can act on.',
+      includes: ['Security and risk assessments', 'Event and venue security planning', 'Travel and movement briefings', 'Guidance on staff routines and procedures'],
+      situations: ['Before a major event', 'Before a trip', 'Moving into a new home or office', 'After an incident'],
+      needFromYou: ['Access to the places and people involved', 'Any existing security procedures', 'What you are most concerned about'],
+      approach: 'The output is a plan you can use, written plainly, with priorities in order.'
+    },
+    {
+      id: 'management',
+      category: 'OPERATIONS',
+      name: 'Management',
+      nameLower: 'management',
+      short: 'Trained people, scheduled and supervised for you.',
+      why: 'Trained people, scheduled and supervised for you.',
+      description: 'For organisations that need protection or protocol staff on an ongoing basis. We assign, schedule and supervise the team so you have one contact instead of many.',
+      includes: ['Team selection and scheduling', 'On-site supervision and reporting', 'Regular reviews of how the team is performing', 'One contact for every shift and site'],
+      situations: ['Estates and complexes', 'Organisations with regular events', 'Executives with ongoing needs', 'Venues and institutions'],
+      needFromYou: ['The sites and shifts to be covered', 'Reporting lines and who we answer to', 'How often you want reviews'],
+      approach: 'We run the team so you do not have to. You set the standard, we keep to it and report back.'
+    }
+  ],
+  steps: [
+    { id: 'briefing', title: 'Briefing', text: 'You tell us who needs protection, where and when. A short call or WhatsApp chat is enough to begin.', detail: 'Have the date, the venue or route and the number of people to hand. If you are unsure of any of it, say so and we will work it out with you.' },
+    { id: 'assessment', title: 'Assessment', text: 'We look at the people, places and routes involved and identify the risks worth planning for.', detail: 'Depending on the size of the assignment, this can be a desk review or a visit to the venue.' },
+    { id: 'plan', title: 'Plan', text: 'We agree the team size, formation, timings and how everyone stays in contact before the day.', detail: 'You receive one plan: who is where, when, and who to call if something changes.' },
+    { id: 'deployment', title: 'Deployment', text: 'Officers are on site and in position before you arrive. One team lead is your point of contact throughout.', detail: 'The team lead briefs the officers on the day and stays in touch with you or your representative.' },
+    { id: 'review', title: 'Review', text: 'After the assignment we go over what happened and adjust the plan for next time.', detail: 'For ongoing work this becomes a regular review, so the plan keeps up with how your needs change.' }
+  ],
+  faq: [
+    { q: 'What is a briefing?', a: 'A briefing is the first step: a short call or WhatsApp chat where you tell us who needs protection, where and when. Nothing is fixed until you agree the plan.' },
+    { q: 'How much notice do you need?', a: 'The more notice, the better the preparation. If it is urgent, say so in your first message and we will tell you what is possible.' },
+    { q: 'Can you work alongside our existing security?', a: 'Yes. Coordinating with venue and host security is part of our VIP protection service, and our management service can supervise a mixed team.' },
+    { q: 'Where do you operate?', a: 'We are based at Redemption City, Mowe, Ogun State. Tell us where you need cover and we will confirm what is possible.' },
+    { q: 'What happens to what I send through this site?', a: 'Your request goes straight to TeamSamson on WhatsApp or by email. This website does not store what you type.' }
+  ],
+  principles: [
+    { id: 'prepared', title: 'Prepared', text: 'Routes, venues and contacts are checked before you arrive.', icon: '<path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/>' },
+    { id: 'discreet', title: 'Discreet', text: 'Officers fit the setting and stay out of the way of your day.', icon: '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>' },
+    { id: 'accountable', title: 'Accountable', text: 'One team lead answers for the detail from start to finish.', icon: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/>' }
+  ],
+  clients: [
+    { title: 'Individuals', text: 'Executives, public figures and anyone who wants trained people close by.' },
+    { title: 'Families', text: 'Protection for the household, in the home and on the move.' },
+    { title: 'Organisations', text: 'Companies, institutions and estates with ongoing security or protocol needs.' },
+    { title: 'Event hosts', text: 'Weddings, conferences, ceremonies and gatherings of any size.' }
+  ],
+  situations: ['Weddings and ceremonies', 'Conferences and conventions', 'Worship gatherings', 'Daily movement', 'Business travel', 'Visiting delegations', 'Corporate events', 'Public appearances', 'Estates and complexes', 'Funerals and memorial services'],
+  galleryCaptions: ['Close protection detail', 'Arrival at an event', 'Protocol team at a reception', 'Venue advance check', 'Guests being received', 'Team briefing'],
+  formations: [
+    { id: 'diamond', name: 'Diamond', text: 'The everyday shape in open space. One officer ahead, one behind and one on each side.' },
+    { id: 'box', name: 'Box', text: 'Officers at four corners around someone who is standing or moving slowly, such as at a reception or in a queue.' },
+    { id: 'wedge', name: 'Wedge', text: 'A V that opens a path through a busy crowd toward an exit or a vehicle.' },
+    { id: 'column', name: 'Column', text: 'A single line for narrow places such as corridors, stairwells and gates.' }
+  ],
+  whenOptions: ['As soon as possible', 'Within a week', 'Within a month', 'Just exploring'],
+  finder: {
+    questions: [
+      { q: 'Who needs protection?', options: [
+        ['Me', { close: 2, vip: 1 }],
+        ['My family', { close: 2, consulting: 1 }],
+        ['A guest or delegation', { vip: 2, protocol: 2 }],
+        ['An organisation or event', { protocol: 2, management: 2, vip: 1 }]
+      ] },
+      { q: 'What is the setting?', options: [
+        ['Everyday movement', { close: 2 }],
+        ['One event or occasion', { vip: 2, protocol: 2 }],
+        ['Travel', { close: 1, consulting: 2 }],
+        ['An ongoing operation', { management: 2, consulting: 1 }]
+      ] },
+      { q: 'Do you already have security in place?', options: [
+        ['No', { close: 1, vip: 1, consulting: 1 }],
+        ['Yes, but it needs coordination', { management: 2, consulting: 1 }],
+        ['Not sure', { consulting: 2 }]
+      ] }
+    ]
+  }
+};
+
+// --- SERVICE GLYPHS (each service drawn as a formation of dots) ---
+const GLYPHS = {
+  close: (a) => `<circle cx="24" cy="24" r="16" stroke-dasharray="2 4"/><circle cx="24" cy="24" r="5.5" fill="${a}" stroke="none"/><g fill="currentColor" stroke="none"><circle cx="24" cy="8" r="3"/><circle cx="40" cy="24" r="3"/><circle cx="24" cy="40" r="3"/><circle cx="8" cy="24" r="3"/></g>`,
+  vip: (a) => `<path d="M24 6 42 24 24 42 6 24Z"/><circle cx="24" cy="24" r="5.5" fill="${a}" stroke="none"/><g fill="currentColor" stroke="none"><circle cx="24" cy="6" r="3"/><circle cx="42" cy="24" r="3"/><circle cx="24" cy="42" r="3"/><circle cx="6" cy="24" r="3"/></g>`,
+  protocol: (a) => `<path d="M6 24h36" stroke-dasharray="2 4"/><g fill="currentColor" stroke="none"><circle cx="8" cy="24" r="3"/><circle cx="18" cy="24" r="3"/><circle cx="28" cy="24" r="3"/></g><circle cx="40" cy="24" r="5.5" fill="${a}" stroke="none"/>`,
+  consulting: (a) => `<g fill="currentColor" stroke="none" opacity=".45"><circle cx="12" cy="12" r="1.8"/><circle cx="24" cy="12" r="1.8"/><circle cx="12" cy="24" r="1.8"/><circle cx="36" cy="24" r="1.8"/><circle cx="36" cy="36" r="1.8"/></g><path d="M12 36h12V24h12V12" stroke-dasharray="2 3"/><circle cx="36" cy="12" r="5" fill="${a}" stroke="none"/><g fill="currentColor" stroke="none"><circle cx="12" cy="36" r="2.6"/><circle cx="24" cy="24" r="2.6"/></g>`,
+  management: (a) => `<path d="M24 12 10 36M24 12v24M24 12l14 24"/><circle cx="24" cy="12" r="5.5" fill="${a}" stroke="none"/><g fill="currentColor" stroke="none"><circle cx="10" cy="36" r="3"/><circle cx="24" cy="36" r="3"/><circle cx="38" cy="36" r="3"/></g>`
+};
+function glyph(id, accent = '#80182a', cls = 'w-full h-full') {
+  const g = GLYPHS[id];
+  if (!g) return '';
+  return `<svg class="${cls}" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">${g(accent)}</svg>`;
+}
+
+// --- HELPERS ---
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const waLink = (text) => `https://wa.me/${SITE_DATA.phoneIntl}${text ? '?text=' + encodeURIComponent(text) : ''}`;
+const mailLink = (subject, body) => `mailto:${SITE_DATA.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+const mapsLink = () => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE_DATA.address)}`;
+const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const getServiceById = (id) => SITE_DATA.services.find((s) => s.id === id);
+
+// --- IMAGE HELPERS ---
+function imageFor(path) {
+  return path.split('.').reduce((o, k) => (o == null ? undefined : o[k]), IMAGES) || '';
+}
+function placeholderBlock(label, glyphId) {
+  return `<div class="ph w-full h-full relative overflow-hidden flex flex-col items-center justify-center gap-2 text-white bg-gradient-to-br from-[#80182a] via-[#5a1220] to-stone-900" role="img" aria-label="Photo placeholder: ${esc(label)}">
+    <div class="absolute inset-0 dot-pattern opacity-50"></div>
+    <div class="relative w-10 h-10 sm:w-12 sm:h-12">${glyph(glyphId || 'close', '#e9b955')}</div>
+    <span class="relative text-[10px] sm:text-[11px] font-semibold text-white/80 px-3 text-center">Add photo: ${esc(label)}</span>
+  </div>`;
+}
+function mediaBlock(src, label, glyphId, imgClass = 'modal-hero-img w-full h-full object-cover') {
+  if (src) {
+    return `<img src="${esc(src)}" alt="${esc(label)}" loading="lazy" class="${imgClass}" data-img-fallback data-fallback-label="${esc(label)}" data-fallback-glyph="${esc(glyphId || 'close')}" />`;
+  }
+  return placeholderBlock(label, glyphId);
+}
+// Static slots in the markup: <div data-media="hero"> ... filled from IMAGES
+const SLOT_META = {
+  hero: { label: 'Home hero', glyph: 'close', placeholder: false },
+  about: { label: 'Our team', glyph: 'management', placeholder: true },
+  office: { label: 'Our office', glyph: 'protocol', placeholder: false },
+  'modals.brief': { label: 'Briefing', glyph: 'close', placeholder: false },
+  'modals.finder': { label: 'Finder', glyph: 'consulting', placeholder: false },
+  'modals.formations': { label: 'Formations', glyph: 'vip', placeholder: false }
+};
+function renderMediaSlots() {
+  document.querySelectorAll('[data-media]').forEach((el) => {
+    const key = el.getAttribute('data-media');
+    const meta = SLOT_META[key] || { label: key, glyph: 'close', placeholder: true };
+    const src = imageFor(key);
+    if (src) {
+      const cls = key === 'hero' ? 'w-full h-full object-cover brightness-[0.45]' : 'modal-hero-img w-full h-full object-cover';
+      el.innerHTML = mediaBlock(src, meta.label, meta.glyph, cls);
+    } else if (meta.placeholder || key === 'office' && el.classList.contains('h-44')) {
+      el.innerHTML = placeholderBlock(meta.label, meta.glyph);
+    } else {
+      el.innerHTML = '';
+    }
+  });
+}
+// If a photo path is wrong, fall back to the placeholder instead of a broken image
+document.addEventListener('error', (e) => {
+  const img = e.target;
+  if (img && img.tagName === 'IMG' && img.hasAttribute('data-img-fallback')) {
+    const holder = document.createElement('div');
+    holder.className = 'w-full h-full';
+    holder.innerHTML = placeholderBlock(img.getAttribute('data-fallback-label') || 'Photo', img.getAttribute('data-fallback-glyph') || 'close');
+    img.replaceWith(holder);
+  }
+}, true);
+
+// --- APP STATE ---
+let currentTab = 'home';
+let currentServiceIdx = 0;
+let lastFocused = null;
+let stageApi = null;
+const brief = { step: 1, services: [], name: '', phone: '', where: '', when: '', notes: '', errors: {} };
+const finder = { step: 0, picks: [] };
+
+// --- TOAST NOTIFICATIONS ---
+function showToast(message, type = 'info') {
+  const container = document.getElementById('toast-container');
+  if (!container) return;
+
+  const toast = document.createElement('div');
+  toast.className = 'pointer-events-auto bg-[#1c1917] text-white px-4 py-3 rounded-2xl shadow-xl border border-stone-700 flex items-center gap-2.5 text-xs sm:text-sm animate-fadeIn max-w-sm transition-all duration-300';
+
+  const icon = type === 'success'
+    ? `<svg class="w-4 h-4 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>`
+    : `<svg class="w-4 h-4 text-amber-300 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`;
+
+  toast.innerHTML = `
+    ${icon}
+    <span class="flex-1">${esc(message)}</span>
+    <button aria-label="Dismiss" class="text-stone-400 hover:text-white ml-2 text-base leading-none">&times;</button>
+  `;
+  toast.querySelector('button').onclick = () => toast.remove();
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.classList.add('opacity-0', 'translate-y-2');
+    setTimeout(() => toast.remove(), 300);
+  }, 4000);
+}
+
+async function copyText(text, label) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      throw new Error('clipboard unavailable');
+    }
+    showToast(`${label} copied`, 'success');
+  } catch (err) {
+    const openModalEl = document.querySelector('.modal-backdrop:not(.hidden)');
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+    (openModalEl || document.body).appendChild(ta);
+    ta.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (e2) { ok = false; }
+    ta.remove();
+    showToast(ok ? `${label} copied` : 'Copy failed. Select the text and copy it by hand.', ok ? 'success' : 'info');
+  }
+}
+
+// --- TAB SWITCHING ---
+function switchTab(tabId) {
+  currentTab = tabId;
+
+  // 1. Hide all tab contents, show active
+  document.querySelectorAll('.tab-view').forEach((t) => {
+    t.classList.toggle('hidden', t.id !== `tab-${tabId}`);
+  });
+
+  // 2. Update Top Desktop Nav Links
+  document.querySelectorAll('nav [data-nav-tab]').forEach((link) => {
+    const target = link.getAttribute('data-nav-tab');
+    if (target === tabId) {
+      link.className = 'text-[#80182a] font-bold border-b-2 border-[#80182a] pb-0.5 px-2.5 transition-colors cursor-pointer text-xs';
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.className = 'text-stone-600 hover:text-stone-900 font-medium px-2.5 transition-colors cursor-pointer text-xs';
+      link.removeAttribute('aria-current');
+    }
+  });
+
+  // 3. Update Mobile Bottom Dock
+  document.querySelectorAll('[data-dock-tab]').forEach((btn) => {
+    const target = btn.getAttribute('data-dock-tab');
+    const label = btn.querySelector('.dock-label');
+    const icon = btn.querySelector('.dock-icon');
+    if (target === tabId) {
+      btn.className = 'dock-btn w-9 h-9 rounded-full bg-stone-800 text-white flex items-center justify-center transition-all text-xs font-semibold shadow-inner flex-shrink-0';
+      btn.setAttribute('aria-label', target);
+      btn.setAttribute('aria-current', 'page');
+      if (label) label.classList.add('hidden');
+      if (icon) icon.setAttribute('class', 'dock-icon w-4 h-4 text-amber-300');
+    } else {
+      btn.className = 'dock-btn h-9 px-3 rounded-full text-stone-300 hover:text-white flex items-center justify-center transition-all text-xs font-medium flex-shrink-0';
+      btn.removeAttribute('aria-label');
+      btn.removeAttribute('aria-current');
+      if (label) label.classList.remove('hidden');
+      if (icon) icon.setAttribute('class', 'dock-icon w-4 h-4 hidden');
+    }
+  });
+
+  window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+}
+
+// --- MODALS ---
+function getOpenModals() {
+  return Array.from(document.querySelectorAll('.modal-backdrop:not(.hidden)'));
+}
+function openModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (!modal) return;
+  const others = getOpenModals().filter((m) => m !== modal);
+  if (!getOpenModals().length) lastFocused = document.activeElement;
+  others.forEach((m) => m.classList.add('hidden'));
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  const panel = modal.querySelector('.modal-panel');
+  if (panel) panel.scrollTop = 0;
+  modal.scrollTop = 0;
+  setTimeout(() => {
+    const closeBtn = modal.querySelector('[data-close-modal]');
+    if (closeBtn) closeBtn.focus({ preventScroll: true });
+  }, 30);
+}
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (!modal) return;
+  modal.classList.add('hidden');
+  if (!getOpenModals().length) {
+    document.body.style.overflow = '';
+    if (lastFocused && document.contains(lastFocused)) lastFocused.focus({ preventScroll: true });
+  }
+}
+function closeAllModals() {
+  getOpenModals().forEach((m) => m.classList.add('hidden'));
+  document.body.style.overflow = '';
+  if (lastFocused && document.contains(lastFocused)) lastFocused.focus({ preventScroll: true });
+}
+
+// --- SERVICE DETAIL MODAL ---
+function openServiceModal(serviceId) {
+  const idx = SITE_DATA.services.findIndex((s) => s.id === serviceId);
+  if (idx < 0) return;
+  currentServiceIdx = idx;
+  const n = SITE_DATA.services.length;
+  const s = SITE_DATA.services[idx];
+  const prev = SITE_DATA.services[(idx + n - 1) % n];
+  const next = SITE_DATA.services[(idx + 1) % n];
+  const imgs = IMAGES.services[s.id] || { card: '', modal: '', thumbs: ['', ''] };
+
+  document.getElementById('service-modal-tag').textContent = s.category;
+  document.getElementById('service-modal-title').textContent = s.name;
+  document.getElementById('service-modal-image').innerHTML = mediaBlock(imgs.modal, `${s.name} header`, s.id);
+
+  const check = `<svg class="w-3.5 h-3.5 text-[#80182a] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>`;
+  const chev = (dir) => `<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="${dir === 'l' ? '15 18 9 12 15 6' : '9 18 15 12 9 6'}"/></svg>`;
+
+  document.getElementById('service-modal-body').innerHTML = `
+    <div class="grid grid-cols-2 gap-2">
+      <div class="h-16 sm:h-24 rounded-xl overflow-hidden">${mediaBlock(imgs.thumbs && imgs.thumbs[0], `${s.name}, photo 1`, s.id, 'w-full h-full object-cover')}</div>
+      <div class="h-16 sm:h-24 rounded-xl overflow-hidden">${mediaBlock(imgs.thumbs && imgs.thumbs[1], `${s.name}, photo 2`, s.id, 'w-full h-full object-cover')}</div>
+    </div>
+    <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">${esc(s.description)}</p>
+    <p class="bg-[#f8f6f0] border border-stone-200/60 rounded-xl px-3.5 py-2.5 italic text-xs sm:text-sm text-stone-600 leading-relaxed">${esc(s.approach)}</p>
+    <div>
+      <span class="text-[10px] font-bold tracking-widest text-stone-500 uppercase block mb-2">WHAT IS INCLUDED</span>
+      <ul class="space-y-1.5">
+        ${s.includes.map((h) => `<li class="flex items-center gap-2 text-xs text-stone-700 bg-[#f8f6f0] border border-stone-200/60 rounded-xl px-3 py-2">${check}<span>${esc(h)}</span></li>`).join('')}
+      </ul>
+    </div>
+    <div>
+      <span class="text-[10px] font-bold tracking-widest text-stone-500 uppercase block mb-2">WHEN PEOPLE USE IT</span>
+      <div class="flex flex-wrap gap-1.5">
+        ${s.situations.map((x) => `<span class="text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 rounded-full px-3 py-1.5">${esc(x)}</span>`).join('')}
+      </div>
+    </div>
+    <div>
+      <span class="text-[10px] font-bold tracking-widest text-stone-500 uppercase block mb-2">WHAT WE NEED FROM YOU</span>
+      <ul class="space-y-1.5 text-xs sm:text-sm text-stone-700">
+        ${s.needFromYou.map((x) => `<li class="flex items-start gap-2">${check.replace('mt-0.5', '')}<span>${esc(x)}</span></li>`).join('')}
+      </ul>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-2 pt-4 border-t border-stone-100">
+      <a href="${waLink(`Hello TeamSamson, I would like to ask about your ${s.nameLower} service.`)}" target="_blank" rel="noopener" class="flex-1 py-2.5 sm:py-3 rounded-xl border border-stone-200 hover:bg-stone-50 font-medium text-xs text-stone-700 transition-colors text-center">Ask on WhatsApp</a>
+      <button data-open-brief="${s.id}" class="flex-1 py-2.5 sm:py-3 rounded-xl bg-[#80182a] hover:bg-[#6e1423] text-white font-medium text-xs sm:text-sm transition-colors text-center">Book a briefing</button>
+    </div>
+    <div class="flex items-center justify-between gap-3 pt-1">
+      <button data-service-step="-1" class="inline-flex items-center gap-1 text-xs font-bold text-stone-600 hover:text-[#80182a] transition-colors">${chev('l')}<span>${esc(prev.name)}</span></button>
+      <button data-service-step="1" class="inline-flex items-center gap-1 text-xs font-bold text-stone-600 hover:text-[#80182a] transition-colors"><span>${esc(next.name)}</span>${chev('r')}</button>
+    </div>
+  `;
+  openModal('modal-service');
+}
+
+// --- BRIEFING MODAL ---
+function briefNames() {
+  if (!brief.services.length || brief.services.includes('unsure')) return ['Not sure yet'];
+  return SITE_DATA.services.filter((s) => brief.services.includes(s.id)).map((s) => s.name);
+}
+function briefMessage() {
+  const lines = [
+    'Hello TeamSamson, I would like to book a briefing.',
+    '',
+    `Services: ${briefNames().join(', ')}`,
+    `Name: ${brief.name.trim()}`,
+    `Contact number: ${brief.phone.trim()}`
+  ];
+  if (brief.where.trim()) lines.push(`Location: ${brief.where.trim()}`);
+  if (brief.when) lines.push(`Timing: ${brief.when}`);
+  if (brief.notes.trim()) lines.push(`Details: ${brief.notes.trim()}`);
+  return lines.join('\n');
+}
+const CHIP_ON = 'bg-[#80182a] text-white border-[#80182a]';
+const CHIP_OFF = 'bg-[#f8f6f0] text-stone-700 border-stone-200 hover:bg-stone-200';
+const chipClass = (on) => `px-3.5 py-2 rounded-full text-xs font-bold border transition-all ${on ? CHIP_ON : CHIP_OFF}`;
+const INPUT_CLASS = 'w-full bg-[#f8f6f0] border border-stone-200 rounded-xl px-4 py-3 text-base sm:text-sm text-stone-900 focus:outline-none focus:border-[#80182a]';
+const LABEL_CLASS = 'block text-[10px] font-bold text-stone-500 uppercase mb-1';
+
+function openBriefModal(preselect) {
+  if (Array.isArray(preselect) && preselect.length) {
+    brief.services = preselect.slice();
+    brief.errors = {};
+  }
+  brief.step = 1;
+  renderBriefModal();
+  openModal('modal-brief');
+}
+function renderBriefModal(focusId) {
+  const body = document.getElementById('brief-modal-body');
+  const st = brief.step;
+  document.getElementById('brief-modal-tag').textContent = `Step ${st} of 3`;
+  const progress = `<div class="flex gap-1.5" aria-hidden="true">${[1, 2, 3].map((n) => `<span class="h-1 flex-1 rounded-full ${n <= st ? 'bg-[#80182a]' : 'bg-stone-200'}"></span>`).join('')}</div>`;
+  let html = progress;
+
+  if (st === 1) {
+    html += `
+      <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">A briefing is a short call or chat where you tell us what you need. Choose the services you want to talk about.</p>
+      <div class="flex flex-wrap gap-2" role="group" aria-label="Services">
+        ${SITE_DATA.services.map((s) => `<button type="button" data-brief-chip="${s.id}" aria-pressed="${brief.services.includes(s.id)}" class="${chipClass(brief.services.includes(s.id))}">${esc(s.name)}</button>`).join('')}
+        <button type="button" data-brief-chip="unsure" aria-pressed="${brief.services.includes('unsure')}" class="${chipClass(brief.services.includes('unsure'))}">Not sure yet</button>
+      </div>
+      ${brief.errors.services ? `<p id="brief-err-services" role="alert" class="text-[11px] text-rose-700 font-semibold">${esc(brief.errors.services)}</p>` : ''}
+      <div class="flex flex-col sm:flex-row gap-2 pt-2 border-t border-stone-100">
+        <button data-brief-next class="flex-1 py-3 rounded-xl bg-[#80182a] hover:bg-[#6e1423] text-white font-semibold text-xs sm:text-sm transition-colors">Continue</button>
+      </div>`;
+  } else if (st === 2) {
+    const e = brief.errors;
+    html += `
+      <div class="space-y-3">
+        <div>
+          <label for="brief-name" class="${LABEL_CLASS}">Your name</label>
+          <input id="brief-name" data-brief-field="name" type="text" autocomplete="name" value="${esc(brief.name)}" class="${INPUT_CLASS}" ${e.name ? 'aria-invalid="true" aria-describedby="brief-err-name"' : ''} />
+          ${e.name ? `<p id="brief-err-name" class="text-[11px] text-rose-700 font-semibold mt-1">${esc(e.name)}</p>` : ''}
+        </div>
+        <div>
+          <label for="brief-phone" class="${LABEL_CLASS}">WhatsApp or phone number</label>
+          <input id="brief-phone" data-brief-field="phone" type="tel" inputmode="tel" autocomplete="tel" value="${esc(brief.phone)}" placeholder="+234 800 000 0000" class="${INPUT_CLASS}" ${e.phone ? 'aria-invalid="true" aria-describedby="brief-err-phone"' : ''} />
+          ${e.phone ? `<p id="brief-err-phone" class="text-[11px] text-rose-700 font-semibold mt-1">${esc(e.phone)}</p>` : ''}
+        </div>
+        <div>
+          <label for="brief-where" class="${LABEL_CLASS}">Where will you need us?</label>
+          <input id="brief-where" data-brief-field="where" type="text" autocomplete="off" value="${esc(brief.where)}" placeholder="City, venue or address" class="${INPUT_CLASS}" />
+        </div>
+        <div>
+          <span id="brief-when-label" class="${LABEL_CLASS}">When do you need us?</span>
+          <div class="flex flex-wrap gap-2" role="radiogroup" aria-labelledby="brief-when-label">
+            ${SITE_DATA.whenOptions.map((w) => `<button type="button" role="radio" data-brief-when="${esc(w)}" aria-checked="${brief.when === w}" class="${chipClass(brief.when === w)}">${esc(w)}</button>`).join('')}
+          </div>
+        </div>
+        <div>
+          <label for="brief-notes" class="${LABEL_CLASS}">Anything else we should know?</label>
+          <textarea id="brief-notes" data-brief-field="notes" rows="3" class="${INPUT_CLASS} resize-y">${esc(brief.notes)}</textarea>
+        </div>
+      </div>
+      <div class="flex flex-col-reverse sm:flex-row gap-2 pt-2 border-t border-stone-100">
+        <button data-brief-back class="flex-1 py-3 rounded-xl border border-stone-200 hover:bg-stone-50 font-medium text-xs text-stone-700 transition-colors">Back</button>
+        <button data-brief-next class="flex-1 py-3 rounded-xl bg-[#80182a] hover:bg-[#6e1423] text-white font-semibold text-xs sm:text-sm transition-colors">Continue</button>
+      </div>`;
+  } else {
+    const msg = briefMessage();
+    html += `
+      <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">Check your request, then send it to TeamSamson.</p>
+      <div class="bg-[#f8f6f0] border border-stone-200/60 rounded-xl px-3.5 py-3 text-xs sm:text-sm text-stone-700 whitespace-pre-wrap break-words">${esc(msg)}</div>
+      <div class="flex flex-col sm:flex-row gap-2">
+        <a data-wa-send href="${waLink(msg)}" target="_blank" rel="noopener" class="flex-1 py-3 rounded-xl bg-[#80182a] hover:bg-[#6e1423] text-white font-semibold text-xs sm:text-sm transition-colors text-center">Send on WhatsApp</a>
+        <a data-mail-send href="${mailLink('Briefing request: ' + briefNames().join(', '), msg)}" class="flex-1 py-3 rounded-xl bg-stone-900 hover:bg-stone-800 text-white font-semibold text-xs sm:text-sm transition-colors text-center">Send by email</a>
+      </div>
+      <div class="flex flex-col-reverse sm:flex-row gap-2">
+        <button data-brief-back class="flex-1 py-2.5 rounded-xl border border-stone-200 hover:bg-stone-50 font-medium text-xs text-stone-700 transition-colors">Back</button>
+        <button data-brief-copy class="flex-1 py-2.5 rounded-xl border border-stone-200 hover:bg-stone-50 font-medium text-xs text-stone-700 transition-colors">Copy message</button>
+      </div>
+      <p class="text-center text-[11px] text-stone-400">Nothing is sent until you send it in WhatsApp or your email app. This page does not store what you type.</p>`;
+  }
+  body.innerHTML = html;
+  if (focusId) {
+    const el = document.getElementById(focusId);
+    if (el) el.focus();
+  }
+}
+function briefNext() {
+  if (brief.step === 1) {
+    if (!brief.services.length) {
+      brief.errors = { services: 'Choose at least one service, or pick Not sure yet.' };
+      renderBriefModal();
+      return;
+    }
+    brief.errors = {};
+    brief.step = 2;
+    renderBriefModal();
+  } else if (brief.step === 2) {
+    const err = {};
+    if (!brief.name.trim()) err.name = 'Enter your name so we know who to reply to.';
+    if (brief.phone.replace(/\D/g, '').length < 7) err.phone = 'Enter a phone or WhatsApp number we can reply to.';
+    brief.errors = err;
+    if (err.name || err.phone) {
+      renderBriefModal(err.name ? 'brief-name' : 'brief-phone');
+      return;
+    }
+    brief.step = 3;
+    renderBriefModal();
+  }
+  const panel = document.querySelector('#modal-brief .modal-panel');
+  if (panel) panel.scrollTop = 0;
+}
+
+// --- FINDER MODAL ---
+function openFinderModal() {
+  finder.step = 0;
+  finder.picks = [];
+  renderFinderModal();
+  openModal('modal-finder');
+}
+function renderFinderModal() {
+  const qs = SITE_DATA.finder.questions;
+  const body = document.getElementById('finder-modal-body');
+  const tag = document.getElementById('finder-modal-tag');
+  const title = document.getElementById('finder-modal-title');
+  const chev = `<svg class="w-3.5 h-3.5 text-stone-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>`;
+  const progress = (upTo) => `<div class="flex gap-1.5" aria-hidden="true">${qs.map((_, i) => `<span class="h-1 flex-1 rounded-full ${i <= upTo ? 'bg-[#80182a]' : 'bg-stone-200'}"></span>`).join('')}</div>`;
+
+  if (finder.step < qs.length) {
+    const q = qs[finder.step];
+    tag.textContent = `Question ${finder.step + 1} of ${qs.length}`;
+    title.textContent = q.q;
+    body.innerHTML = `
+      ${progress(finder.step)}
+      <div class="space-y-2">
+        ${q.options.map((o, i) => `<button data-finder-pick="${i}" class="w-full flex items-center justify-between gap-3 text-left bg-[#f8f6f0] hover:bg-stone-100 border border-stone-200 hover:border-[#80182a] rounded-xl px-4 py-3.5 text-xs sm:text-sm font-semibold text-stone-800 transition-colors"><span>${esc(o[0])}</span>${chev}</button>`).join('')}
+      </div>
+      ${finder.step > 0 ? `<button data-finder-back class="text-xs font-bold text-stone-500 hover:text-[#80182a] transition-colors">Back</button>` : ''}`;
+  } else {
+    const score = {};
+    SITE_DATA.services.forEach((s) => { score[s.id] = 0; });
+    finder.picks.forEach((pi, qi) => {
+      const w = qs[qi].options[pi][1];
+      Object.keys(w).forEach((k) => { score[k] += w[k]; });
+    });
+    const ranked = SITE_DATA.services.slice().sort((a, b) => score[b.id] - score[a.id] || SITE_DATA.services.indexOf(a) - SITE_DATA.services.indexOf(b));
+    const top = ranked[0];
+    const second = ranked[1];
+    const hasSecond = score[second.id] > 0;
+    const ids = top.id + (hasSecond ? ',' + second.id : '');
+    tag.textContent = 'Your result';
+    title.textContent = `Start with ${top.nameLower}`;
+    body.innerHTML = `
+      ${progress(qs.length)}
+      <div class="flex items-start gap-3">
+        <div class="w-14 h-14 rounded-2xl bg-[#f8f6f0] border border-stone-200/60 text-stone-800 p-2.5 flex-shrink-0">${glyph(top.id)}</div>
+        <p class="text-xs sm:text-sm text-stone-700 leading-relaxed pt-1">${esc(top.why)}</p>
+      </div>
+      ${hasSecond ? `<div class="bg-[#f8f6f0] border border-stone-200/60 rounded-xl px-3.5 py-3"><span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block mb-1">ALSO WORTH DISCUSSING</span><p class="text-xs sm:text-sm text-stone-700"><strong class="text-stone-900">${esc(second.name)}.</strong> ${esc(second.why)}</p></div>` : ''}
+      <p class="text-[11px] text-stone-500 leading-relaxed">This is a starting point. A briefing confirms what you actually need.</p>
+      <div class="flex flex-col sm:flex-row gap-2 pt-2 border-t border-stone-100">
+        <button data-open-service="${top.id}" class="flex-1 py-2.5 sm:py-3 rounded-xl border border-stone-200 hover:bg-stone-50 font-medium text-xs text-stone-700 transition-colors">Read about ${esc(top.nameLower)}</button>
+        <button data-open-brief="${ids}" class="flex-1 py-2.5 sm:py-3 rounded-xl bg-[#80182a] hover:bg-[#6e1423] text-white font-medium text-xs sm:text-sm transition-colors">Book a briefing</button>
+      </div>
+      <button data-finder-restart class="text-xs font-bold text-stone-500 hover:text-[#80182a] transition-colors">Start over</button>`;
+  }
+  const panel = document.querySelector('#modal-finder .modal-panel');
+  if (panel) panel.scrollTop = 0;
+}
+
+// --- RENDERERS (data-driven sections) ---
+function renderHeroChips() {
+  const el = document.getElementById('hero-service-chips');
+  if (!el) return;
+  el.innerHTML = SITE_DATA.services.map((s) => `
+    <button data-open-service="${s.id}" class="glass-chip inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] sm:text-[11px] font-semibold text-white hover:bg-white/30 transition-colors">
+      <span class="w-3.5 h-3.5 text-amber-200">${glyph(s.id, '#f3c76b')}</span>
+      ${esc(s.name)}
+    </button>`).join('');
+}
+function renderServices() {
+  const el = document.getElementById('services-grid');
+  if (!el) return;
+  el.innerHTML = SITE_DATA.services.map((s) => {
+    const imgs = IMAGES.services[s.id] || {};
+    return `
+    <button type="button" data-open-service="${s.id}" class="group text-left bg-white rounded-3xl overflow-hidden border border-stone-200/80 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col">
+      <!-- CARD PHOTO: IMAGES.services.${s.id}.card -->
+      <div class="h-40 sm:h-44 overflow-hidden">${mediaBlock(imgs.card, `${s.name} card`, s.id)}</div>
+      <div class="p-5 sm:p-6 flex flex-col gap-3 flex-1">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">${esc(s.category)}</span>
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 mt-1">${esc(s.name)}</h3>
+        </div>
+        <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">${esc(s.short)}</p>
+        <div class="flex flex-wrap gap-1.5">
+          ${s.situations.slice(0, 3).map((x) => `<span class="text-[10px] font-semibold text-stone-600 bg-[#f8f6f0] border border-stone-200/60 rounded-full px-2.5 py-1">${esc(x)}</span>`).join('')}
+        </div>
+        <span class="mt-auto pt-1 inline-flex items-center gap-1 text-xs font-bold text-[#80182a] group-hover:gap-2 transition-all">View details
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </span>
+      </div>
+    </button>`;
+  }).join('');
+}
+function renderSteps() {
+  const el = document.getElementById('steps-list');
+  if (!el) return;
+  el.innerHTML = SITE_DATA.steps.map((st, i) => `
+    <li class="relative pl-14" data-step-item="${st.id}" data-open="${i === 0}">
+      <span data-step-num class="absolute left-0 top-3 w-10 h-10 rounded-full border-2 flex items-center justify-center font-serif font-bold text-lg transition-colors ${i === 0 ? 'bg-[#80182a] text-white border-[#80182a]' : 'bg-white text-stone-700 border-stone-300'}">${i + 1}</span>
+      <div class="bg-white rounded-2xl border border-stone-200/80 shadow-sm">
+        <button data-step-toggle="${st.id}" aria-expanded="${i === 0}" aria-controls="step-detail-${st.id}" class="w-full text-left flex items-center justify-between gap-3 px-4 sm:px-5 py-3.5">
+          <span class="font-serif text-xl sm:text-2xl font-bold text-stone-900">${esc(st.title)}</span>
+          <svg data-step-chev class="w-4 h-4 text-stone-400 flex-shrink-0 transition-transform ${i === 0 ? 'rotate-90' : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="px-4 sm:px-5 pb-4 space-y-2">
+          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">${esc(st.text)}</p>
+          <p id="step-detail-${st.id}" data-step-detail class="${i === 0 ? '' : 'hidden'} bg-[#f8f6f0] border border-stone-200/60 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-stone-700 leading-relaxed">${esc(st.detail)}</p>
+        </div>
+      </div>
+    </li>`).join('');
+}
+function toggleStep(stepId) {
+  document.querySelectorAll('[data-step-item]').forEach((li) => {
+    const isTarget = li.getAttribute('data-step-item') === stepId;
+    const open = isTarget && li.getAttribute('data-open') !== 'true';
+    li.setAttribute('data-open', String(open));
+    const detail = li.querySelector('[data-step-detail]');
+    if (detail) detail.classList.toggle('hidden', !open);
+    const btn = li.querySelector('[data-step-toggle]');
+    if (btn) btn.setAttribute('aria-expanded', String(open));
+    const chev = li.querySelector('[data-step-chev]');
+    if (chev) chev.classList.toggle('rotate-90', open);
+    const num = li.querySelector('[data-step-num]');
+    if (num) {
+      ['bg-[#80182a]', 'text-white', 'border-[#80182a]'].forEach((c) => num.classList.toggle(c, open));
+      ['bg-white', 'text-stone-700', 'border-stone-300'].forEach((c) => num.classList.toggle(c, !open));
+    }
+  });
+}
+function renderFaq() {
+  const el = document.getElementById('faq-list');
+  if (!el) return;
+  el.innerHTML = SITE_DATA.faq.map((f, i) => `
+    <div class="bg-white rounded-2xl border border-stone-200/80 shadow-sm" data-faq-item>
+      <button data-faq-toggle aria-expanded="false" aria-controls="faq-a-${i}" class="w-full text-left flex items-center justify-between gap-3 px-4 sm:px-5 py-3.5">
+        <span class="text-sm font-semibold text-stone-900">${esc(f.q)}</span>
+        <svg data-faq-chev class="w-4 h-4 text-stone-400 flex-shrink-0 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <p id="faq-a-${i}" data-faq-answer class="hidden px-4 sm:px-5 pb-4 text-xs sm:text-sm text-stone-600 leading-relaxed">${esc(f.a)}</p>
+    </div>`).join('');
+}
+function toggleFaq(btn) {
+  const item = btn.closest('[data-faq-item]');
+  const answer = item.querySelector('[data-faq-answer]');
+  const open = answer.classList.contains('hidden');
+  answer.classList.toggle('hidden', !open);
+  btn.setAttribute('aria-expanded', String(open));
+  item.querySelector('[data-faq-chev]').classList.toggle('rotate-180', open);
+}
+function renderAbout() {
+  const pr = document.getElementById('principles-grid');
+  if (pr) {
+    pr.innerHTML = SITE_DATA.principles.map((p) => `
+      <div class="bg-white rounded-3xl border border-stone-200/80 shadow-sm p-5 sm:p-6 space-y-3">
+        <span class="w-11 h-11 rounded-2xl bg-[#f8f6f0] border border-stone-200/60 text-[#80182a] flex items-center justify-center">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${p.icon}</svg>
+        </span>
+        <h3 class="font-serif text-2xl font-bold text-stone-900">${esc(p.title)}</h3>
+        <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">${esc(p.text)}</p>
+      </div>`).join('');
+  }
+  const cl = document.getElementById('clients-grid');
+  if (cl) {
+    cl.innerHTML = SITE_DATA.clients.map((c) => `
+      <div class="glass rounded-2xl p-4 sm:p-5 space-y-1.5">
+        <h3 class="font-serif text-xl font-bold text-stone-900">${esc(c.title)}</h3>
+        <p class="text-xs text-stone-600 leading-relaxed">${esc(c.text)}</p>
+      </div>`).join('');
+  }
+  const si = document.getElementById('situations-chips');
+  if (si) {
+    si.innerHTML = SITE_DATA.situations.map((x) => `<span class="text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 rounded-full px-3 py-1.5">${esc(x)}</span>`).join('');
+  }
+}
+function renderGallery() {
+  const track = document.getElementById('gallery-track');
+  if (!track) return;
+  const item = (i, hidden) => `
+    <figure class="w-56 sm:w-64 flex-shrink-0 mr-3" ${hidden ? 'aria-hidden="true"' : ''}>
+      <!-- GALLERY PHOTO ${i + 1}: IMAGES.gallery[${i}] -->
+      <div class="h-40 sm:h-44 rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm">${mediaBlock(IMAGES.gallery[i], SITE_DATA.galleryCaptions[i] || `Gallery ${i + 1}`, SITE_DATA.services[i % SITE_DATA.services.length].id, 'w-full h-full object-cover')}</div>
+      <figcaption class="text-[11px] font-semibold text-stone-600 mt-2 px-1">${esc(SITE_DATA.galleryCaptions[i] || '')}</figcaption>
+    </figure>`;
+  const count = Math.max(IMAGES.gallery.length, SITE_DATA.galleryCaptions.length);
+  const idx = Array.from({ length: count }, (_, i) => i);
+  track.innerHTML = idx.map((i) => item(i, false)).join('') + idx.map((i) => item(i, true)).join('');
+}
+function renderFormationList() {
+  const el = document.getElementById('formations-list');
+  if (!el) return;
+  el.innerHTML = SITE_DATA.formations.map((f) => `
+    <li class="bg-[#f8f6f0] border border-stone-200/60 rounded-2xl px-4 py-3 flex items-center justify-between gap-3">
+      <div class="min-w-0">
+        <h4 class="font-serif text-lg font-bold text-stone-900">${esc(f.name)}</h4>
+        <p class="text-xs text-stone-600 leading-relaxed">${esc(f.text)}</p>
+      </div>
+      <button data-show-formation="${f.id}" class="text-[11px] font-bold text-[#80182a] bg-white hover:bg-rose-50 border border-stone-200 px-3 py-2 rounded-full flex-shrink-0 transition-colors">Show me</button>
+    </li>`).join('');
+}
+function renderFooterLists() {
+  const el = document.getElementById('footer-services');
+  if (el) {
+    el.innerHTML = SITE_DATA.services.map((s) => `<li><button data-open-service="${s.id}" class="hover:text-white transition-colors text-left">${esc(s.name)}</button></li>`).join('');
+  }
+}
+function fillContactLinks() {
+  document.querySelectorAll('[data-wa-link]').forEach((a) => {
+    const text = a.getAttribute('data-wa-text') || 'Hello TeamSamson, I would like to make an enquiry.';
+    a.setAttribute('href', waLink(text));
+  });
+  document.querySelectorAll('[data-mail-link]').forEach((a) => a.setAttribute('href', `mailto:${SITE_DATA.email}`));
+  document.querySelectorAll('[data-maps-link]').forEach((a) => a.setAttribute('href', mapsLink()));
+  document.querySelectorAll('[data-phone-text]').forEach((el) => { el.textContent = SITE_DATA.phoneDisplay; });
+  document.querySelectorAll('[data-email-text]').forEach((el) => { el.textContent = SITE_DATA.email; });
+}
+
+// --- FORMATION STAGE (interactive demo on the home tab) ---
+function initStage() {
+  const stage = document.getElementById('stage');
+  const cv = document.getElementById('fx');
+  const handle = document.getElementById('principal');
+  const hint = document.getElementById('stage-hint');
+  const pills = document.getElementById('formation-pills');
+  if (!stage || !cv || !handle) return null;
+  const ctx = cv.getContext('2d');
+  if (!ctx) return null;
+
+  const PILL_ON = 'px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#80182a] text-white shadow-sm';
+  const PILL_OFF = 'px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#f8f6f0] text-stone-600 hover:bg-stone-200';
+  const FORMS = {
+    diamond: [[1, 0], [-1, 0], [0, 1], [0, -1]],
+    box: [[.78, .78], [.78, -.78], [-.78, .78], [-.78, -.78]],
+    wedge: [[1.35, 0], [.7, .9], [.7, -.9], [-.95, 0]],
+    column: [[1.75, 0], [.88, 0], [-.88, 0], [-1.75, 0]]
+  };
+
+  let W = 0, H = 0, R = 58, inited = false;
+  let form = 'diamond';
+  const P = { x: 0, y: 0 }, T = { x: 0, y: 0 }, prev = { x: 0, y: 0 };
+  let heading = -Math.PI / 2;
+  const agents = [0, 1, 2, 3].map((i) => ({ x: 0, y: 0, vx: 0, vy: 0, k: 70 + i * 14 }));
+  let interacted = false, dragging = false, offX = 0, offY = 0;
+  let running = false, visible = true, raf = null;
+  const t0 = performance.now();
+  let last = t0;
+
+  function resize() {
+    const r = stage.getBoundingClientRect();
+    if (!r.width || !r.height) return;
+    const sx = W ? r.width / W : 1;
+    const sy = H ? r.height / H : 1;
+    W = r.width; H = r.height;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width = Math.round(W * dpr);
+    cv.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    R = clamp(Math.min(W, H) * .17, 46, 84);
+    if (!inited) {
+      P.x = T.x = W * .5; P.y = T.y = H * .5; prev.x = P.x; prev.y = P.y;
+      const starts = [[-30, -30], [W + 30, -30], [-30, H + 30], [W + 30, H + 30]];
+      agents.forEach((a, i) => { a.x = starts[i][0]; a.y = starts[i][1]; a.vx = a.vy = 0; });
+      inited = true;
+    } else {
+      P.x *= sx; P.y *= sy; T.x *= sx; T.y *= sy; prev.x = P.x; prev.y = P.y;
+      agents.forEach((a) => { a.x *= sx; a.y *= sy; });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    // dotted floor that lights up around the protected person
+    const gs = 24;
+    for (let x = gs / 2; x < W; x += gs) {
+      for (let y = gs / 2; y < H; y += gs) {
+        const dx = x - P.x, dy = y - P.y;
+        const a = .08 + .5 * Math.exp(-(dx * dx + dy * dy) / (2 * 95 * 95));
+        ctx.fillStyle = `rgba(255,255,255,${a.toFixed(3)})`;
+        ctx.fillRect(x - 1, y - 1, 2, 2);
+      }
+    }
+    // protected zone
+    const pts = agents.map((g) => ({ x: g.x, y: g.y, a: Math.atan2(g.y - P.y, g.x - P.x) })).sort((p, q) => p.a - q.a);
+    ctx.beginPath();
+    pts.forEach((p, i) => { if (i) ctx.lineTo(p.x, p.y); else ctx.moveTo(p.x, p.y); });
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(217,164,65,.10)'; ctx.fill();
+    ctx.setLineDash([4, 6]); ctx.strokeStyle = 'rgba(255,255,255,.32)'; ctx.lineWidth = 1; ctx.stroke(); ctx.setLineDash([]);
+    // eyes outward: each officer watches away from the person
+    const fr = Math.max(40, R * .85);
+    agents.forEach((g) => {
+      const ang = Math.atan2(g.y - P.y, g.x - P.x);
+      const gr = ctx.createRadialGradient(g.x, g.y, 0, g.x, g.y, fr);
+      gr.addColorStop(0, 'rgba(255,255,255,.34)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = gr; ctx.beginPath(); ctx.moveTo(g.x, g.y); ctx.arc(g.x, g.y, fr, ang - .6, ang + .6); ctx.closePath(); ctx.fill();
+    });
+    // halo
+    const hg = ctx.createRadialGradient(P.x, P.y, 0, P.x, P.y, 78);
+    hg.addColorStop(0, 'rgba(217,164,65,.36)'); hg.addColorStop(1, 'rgba(217,164,65,0)');
+    ctx.fillStyle = hg; ctx.beginPath(); ctx.arc(P.x, P.y, 78, 0, Math.PI * 2); ctx.fill();
+    // spokes and officers
+    ctx.strokeStyle = 'rgba(255,255,255,.14)'; ctx.lineWidth = 1;
+    agents.forEach((g) => { ctx.beginPath(); ctx.moveTo(P.x, P.y); ctx.lineTo(g.x, g.y); ctx.stroke(); });
+    agents.forEach((g) => {
+      ctx.beginPath(); ctx.arc(g.x, g.y, 7, 0, Math.PI * 2);
+      ctx.lineWidth = 4; ctx.strokeStyle = '#1c1917'; ctx.stroke();
+      ctx.fillStyle = '#ffffff'; ctx.fill();
+    });
+    handle.style.transform = `translate3d(${P.x.toFixed(1)}px,${P.y.toFixed(1)}px,0)`;
+  }
+
+  function frame(now) {
+    raf = null;
+    if (!running) return;
+    if (!W) resize();
+    let dt = Math.min(.033, (now - last) / 1000);
+    last = now;
+    if (dt <= 0) dt = .016;
+    const t = (now - t0) / 1000;
+    if (W) {
+      if (!interacted && !prefersReducedMotion) {
+        T.x = W * (.5 + .27 * Math.sin(t * .55));
+        T.y = H * (.5 + .2 * Math.sin(t * .9 + 1.2));
+      }
+      const f = 1 - Math.exp(-dt * (dragging ? 26 : 14));
+      P.x += (T.x - P.x) * f; P.y += (T.y - P.y) * f;
+      const vx = (P.x - prev.x) / dt, vy = (P.y - prev.y) / dt;
+      prev.x = P.x; prev.y = P.y;
+      if (!prefersReducedMotion && Math.hypot(vx, vy) > 30) {
+        let d = Math.atan2(vy, vx) - heading;
+        d = Math.atan2(Math.sin(d), Math.cos(d));
+        heading += d * (1 - Math.exp(-dt * 5));
+      }
+      const Fx = Math.cos(heading), Fy = Math.sin(heading), Sx = -Fy, Sy = Fx;
+      const offs = FORMS[form];
+      for (let i = 0; i < 4; i++) {
+        const a = agents[i];
+        const tx = clamp(P.x + R * (offs[i][0] * Fx + offs[i][1] * Sx), 14, W - 14);
+        const ty = clamp(P.y + R * (offs[i][0] * Fy + offs[i][1] * Sy), 14, H - 14);
+        if (prefersReducedMotion) { a.x = tx; a.y = ty; }
+        else {
+          const c = 2 * Math.sqrt(a.k) * .72;
+          a.vx += (a.k * (tx - a.x) - c * a.vx) * dt;
+          a.vy += (a.k * (ty - a.y) - c * a.vy) * dt;
+          a.x += a.vx * dt; a.y += a.vy * dt;
+        }
+      }
+      draw();
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  function start() {
+    if (running || !visible || document.hidden) return;
+    running = true; last = performance.now();
+    raf = requestAnimationFrame(frame);
+  }
+  function stop() {
+    running = false;
+    if (raf) cancelAnimationFrame(raf);
+    raf = null;
+  }
+  function touched() { interacted = true; if (hint) hint.classList.add('opacity-0'); }
+
+  handle.addEventListener('pointerdown', (e) => {
+    dragging = true; touched();
+    handle.setPointerCapture(e.pointerId);
+    const r = stage.getBoundingClientRect();
+    offX = (e.clientX - r.left) - P.x; offY = (e.clientY - r.top) - P.y;
+    e.preventDefault();
+  });
+  handle.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    const r = stage.getBoundingClientRect();
+    T.x = clamp(e.clientX - r.left - offX, 28, W - 28);
+    T.y = clamp(e.clientY - r.top - offY, 28, H - 28);
+  });
+  ['pointerup', 'pointercancel', 'lostpointercapture'].forEach((ev) => handle.addEventListener(ev, () => { dragging = false; }));
+  stage.addEventListener('click', (e) => {
+    if (e.target.closest('#principal')) return;
+    const r = stage.getBoundingClientRect();
+    touched();
+    T.x = clamp(e.clientX - r.left, 28, W - 28);
+    T.y = clamp(e.clientY - r.top, 28, H - 28);
+  });
+  handle.addEventListener('keydown', (e) => {
+    const step = e.shiftKey ? 60 : 30;
+    const m = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[e.key];
+    if (!m) return;
+    e.preventDefault(); touched();
+    T.x = clamp(T.x + m[0] * step, 28, W - 28);
+    T.y = clamp(T.y + m[1] * step, 28, H - 28);
+  });
+
+  function setFormation(key) {
+    if (!FORMS[key]) return;
+    form = key;
+    pills.querySelectorAll('[role="radio"]').forEach((b) => {
+      const on = b.getAttribute('data-formation') === key;
+      b.setAttribute('aria-checked', String(on));
+      b.setAttribute('tabindex', on ? '0' : '-1');
+      b.className = on ? PILL_ON : PILL_OFF;
+    });
+    touched();
+  }
+  pills.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-formation]');
+    if (b) setFormation(b.getAttribute('data-formation'));
+  });
+  pills.addEventListener('keydown', (e) => {
+    const dir = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+    if (!dir) return;
+    e.preventDefault();
+    const btns = Array.from(pills.querySelectorAll('[role="radio"]'));
+    const i = btns.indexOf(document.activeElement);
+    const nb = btns[(i + dir + btns.length) % btns.length];
+    nb.focus();
+    setFormation(nb.getAttribute('data-formation'));
+  });
+
+  if ('ResizeObserver' in window) new ResizeObserver(resize).observe(stage);
+  window.addEventListener('resize', resize);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((en) => { visible = en[0].isIntersecting; if (visible) start(); else stop(); }, { threshold: 0 }).observe(stage);
+  }
+  document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else start(); });
+  resize();
+  start();
+  return { setFormation };
+}
+
+// --- INITIALIZATION ---
+document.addEventListener('DOMContentLoaded', () => {
+  renderMediaSlots();
+  renderHeroChips();
+  renderServices();
+  renderSteps();
+  renderFaq();
+  renderAbout();
+  renderGallery();
+  renderFormationList();
+  renderFooterLists();
+  fillContactLinks();
+  stageApi = initStage();
+
+  // One delegated click handler covers static and dynamic content
+  document.addEventListener('click', (e) => {
+    let t;
+
+    if ((t = e.target.closest('[data-nav-tab], [data-dock-tab]'))) {
+      e.preventDefault();
+      switchTab(t.getAttribute('data-nav-tab') || t.getAttribute('data-dock-tab'));
+      return;
+    }
+    if ((t = e.target.closest('[data-close-modal]'))) {
+      e.preventDefault();
+      closeModal(t.getAttribute('data-close-modal'));
+      return;
+    }
+    if ((t = e.target.closest('[data-open-brief]'))) {
+      e.preventDefault();
+      const v = t.getAttribute('data-open-brief');
+      openBriefModal(v ? v.split(',') : null);
+      return;
+    }
+    if (e.target.closest('[data-open-finder]')) { e.preventDefault(); openFinderModal(); return; }
+    if ((t = e.target.closest('[data-open-service]'))) { e.preventDefault(); openServiceModal(t.getAttribute('data-open-service')); return; }
+    if ((t = e.target.closest('[data-service-step]'))) {
+      const n = SITE_DATA.services.length;
+      const next = (currentServiceIdx + parseInt(t.getAttribute('data-service-step'), 10) + n) % n;
+      openServiceModal(SITE_DATA.services[next].id);
+      return;
+    }
+    if ((t = e.target.closest('[data-open-modal]'))) { e.preventDefault(); openModal(t.getAttribute('data-open-modal')); return; }
+
+    // Briefing modal controls
+    if ((t = e.target.closest('[data-brief-chip]'))) {
+      const id = t.getAttribute('data-brief-chip');
+      if (id === 'unsure') {
+        brief.services = brief.services.includes('unsure') ? [] : ['unsure'];
+      } else {
+        const list = brief.services.filter((x) => x !== 'unsure');
+        const ix = list.indexOf(id);
+        if (ix > -1) list.splice(ix, 1); else list.push(id);
+        brief.services = list;
+      }
+      brief.errors = {};
+      document.querySelectorAll('[data-brief-chip]').forEach((c) => {
+        const on = brief.services.includes(c.getAttribute('data-brief-chip'));
+        c.setAttribute('aria-pressed', String(on));
+        c.className = chipClass(on);
+      });
+      const er = document.getElementById('brief-err-services');
+      if (er) er.remove();
+      return;
+    }
+    if ((t = e.target.closest('[data-brief-when]'))) {
+      const w = t.getAttribute('data-brief-when');
+      brief.when = brief.when === w ? '' : w;
+      document.querySelectorAll('[data-brief-when]').forEach((c) => {
+        const on = c.getAttribute('data-brief-when') === brief.when;
+        c.setAttribute('aria-checked', String(on));
+        c.className = chipClass(on);
+      });
+      return;
+    }
+    if (e.target.closest('[data-brief-next]')) { briefNext(); return; }
+    if (e.target.closest('[data-brief-back]')) { brief.step = Math.max(1, brief.step - 1); renderBriefModal(); return; }
+    if (e.target.closest('[data-brief-copy]')) { copyText(briefMessage(), 'Message'); return; }
+    if (e.target.closest('[data-wa-send]')) { showToast('WhatsApp opened. Send the message to finish.', 'success'); return; }
+    if (e.target.closest('[data-mail-send]')) { showToast('Email app opened. Send the message to finish.', 'success'); return; }
+
+    // Finder modal controls
+    if ((t = e.target.closest('[data-finder-pick]'))) {
+      finder.picks[finder.step] = parseInt(t.getAttribute('data-finder-pick'), 10);
+      finder.step += 1;
+      renderFinderModal();
+      return;
+    }
+    if (e.target.closest('[data-finder-back]')) { finder.step = Math.max(0, finder.step - 1); finder.picks.length = finder.step; renderFinderModal(); return; }
+    if (e.target.closest('[data-finder-restart]')) { finder.step = 0; finder.picks = []; renderFinderModal(); return; }
+
+    // Timeline, FAQ, copy buttons, formation shortcut
+    if ((t = e.target.closest('[data-step-toggle]'))) { toggleStep(t.getAttribute('data-step-toggle')); return; }
+    if ((t = e.target.closest('[data-faq-toggle]'))) { toggleFaq(t); return; }
+    if ((t = e.target.closest('[data-copy]'))) {
+      const what = t.getAttribute('data-copy');
+      if (what === 'address') copyText(SITE_DATA.address, 'Address');
+      if (what === 'email') copyText(SITE_DATA.email, 'Email address');
+      return;
+    }
+    if ((t = e.target.closest('[data-show-formation]'))) {
+      const key = t.getAttribute('data-show-formation');
+      closeAllModals();
+      if (currentTab !== 'home') switchTab('home');
+      setTimeout(() => {
+        if (stageApi) stageApi.setFormation(key);
+        const st = document.getElementById('stage');
+        if (st) st.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'center' });
+      }, 120);
+      return;
+    }
+
+    // Close a modal when the dark backdrop itself is clicked
+    if (e.target.classList && e.target.classList.contains('modal-backdrop')) {
+      closeModal(e.target.id);
+    }
+  });
+
+  // Keep the briefing form state in sync as people type
+  document.addEventListener('input', (e) => {
+    const f = e.target.getAttribute && e.target.getAttribute('data-brief-field');
+    if (f) brief[f] = e.target.value;
+  });
+
+  // Close topmost modal with Escape and keep Tab focus inside it
+  document.addEventListener('keydown', (e) => {
+    const open = getOpenModals();
+    if (!open.length) return;
+    if (e.key === 'Escape') {
+      closeModal(open[open.length - 1].id);
+      return;
+    }
+    if (e.key === 'Tab') {
+      const modal = open[open.length - 1];
+      const focusables = Array.from(modal.querySelectorAll('a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])')).filter((el) => el.offsetParent !== null);
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const lastEl = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); lastEl.focus(); }
+      else if (!e.shiftKey && document.activeElement === lastEl) { e.preventDefault(); first.focus(); }
+      else if (!modal.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  // Window exposure for any inline handlers you add later
+  window.switchTab = switchTab;
+  window.openModal = openModal;
+  window.closeModal = closeModal;
+  window.openServiceModal = openServiceModal;
+  window.openBriefModal = openBriefModal;
+  window.openFinderModal = openFinderModal;
+  window.showToast = showToast;
+});
+    </script>
+  </body>
+</html>
