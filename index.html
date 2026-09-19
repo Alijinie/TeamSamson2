@@ -10,6 +10,8 @@
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#f7f4ed" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="apple-touch-icon" href="logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -143,26 +145,53 @@
       .modal-panel { border-radius: 1.1rem !important; }
     }
 
-    /* Formation stage */
-    .stage { touch-action: pan-y; user-select: none; -webkit-user-select: none; }
-    .stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-    .stage-principal {
-      position: absolute; left: 0; top: 0; width: 64px; height: 64px; margin: -32px 0 0 -32px;
-      border: 0; padding: 0; border-radius: 9999px; background: transparent;
-      display: grid; place-items: center; cursor: grab; touch-action: none; will-change: transform;
+    /* Formation cards (static, text-rich replacement for the old draggable demo) */
+    .formation-diagram { aspect-ratio: 16 / 8; }
+
+    /* ---- Responsive hardening: fluid type, no horizontal scroll, large-phone safe ---- */
+    img { max-width: 100%; height: auto; }
+    img.modal-hero-img, #service-modal-image img, [data-media] img { height: 100%; }
+    h1 { font-size: clamp(2.6rem, 11vw, 4.5rem); text-wrap: balance; }
+    h2 { text-wrap: balance; }
+    p { overflow-wrap: break-word; }
+    #main, header, footer > div { min-width: 0; }
+    button, a { min-height: 0; }
+    button[data-open-brief], button[data-open-finder], button[data-open-service],
+    [data-brief-next], [data-brief-back] { min-height: 44px; }
+    .marquee-track figure { width: 14rem; }
+    @media (min-width: 640px) { .marquee-track figure { width: 16rem; } }
+    /* Samsung large phones + small phones: 320px - 480px */
+    @media (max-width: 480px) {
+      #main { padding-left: .85rem; padding-right: .85rem; }
+      header { padding-left: .65rem; padding-right: .65rem; }
+      .glass, .glass-pill { backdrop-filter: blur(14px) saturate(1.3); -webkit-backdrop-filter: blur(14px) saturate(1.3); }
+      #hero-service-chips { gap: .4rem; }
+      .modal-backdrop { padding: .65rem; align-items: flex-end; }
+      .modal-panel { width: 100%; border-radius: 1.25rem !important; }
     }
-    .stage-principal:active { cursor: grabbing; }
-    .stage-principal:focus-visible { outline: 3px solid #fff; outline-offset: 2px; box-shadow: none; }
-    .stage-core { width: 26px; height: 26px; border-radius: 9999px; background: #d9a441; box-shadow: 0 0 0 5px rgba(217,164,65,.3); }
-    .stage-principal::after {
-      content: ""; position: absolute; inset: 14px; border-radius: 9999px; border: 2px solid #d9a441;
-      opacity: 0; animation: stage-pulse 2.4s ease-out infinite; pointer-events: none;
+    /* Galaxy Fold cover / very narrow */
+    @media (max-width: 360px) {
+      h1 { font-size: clamp(2.2rem, 13vw, 3rem); }
+      .dock-btn { padding-left: .6rem; padding-right: .6rem; }
     }
-    @keyframes stage-pulse { 0% { transform: scale(.8); opacity: .7; } 100% { transform: scale(2.1); opacity: 0; } }
+    /* Samsung large-screen phones in landscape / tablets portrait: keep grids readable */
+    @media (min-width: 481px) and (max-width: 820px) {
+      #services-grid { grid-template-columns: 1fr; }
+      #formation-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 820px) {
+      #formation-cards { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 821px) {
+      #formation-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (min-width: 1100px) {
+      #formation-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .marquee-track, .modal-panel, .animate-fadeIn, .stage-principal::after { animation: none !important; }
+      .marquee-track, .modal-panel, .animate-fadeIn { animation: none !important; }
       .marquee-container { overflow-x: auto; }
     }
   </style>
@@ -239,7 +268,7 @@
 
           <!-- Hero Bottom Details -->
           <div class="relative z-10 space-y-3 pt-24 sm:pt-32 lg:pt-40 max-w-2xl">
-            <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[0.95]">
+            <h1 class="font-serif font-bold tracking-tight text-white leading-[0.95]">
               TeamSamson
             </h1>
             <p class="font-serif italic text-rose-200 text-xl sm:text-2xl">
@@ -289,7 +318,7 @@
           </div>
           <div class="glass rounded-2xl p-4 sm:p-5 text-center space-y-1">
             <span class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 block">4</span>
-            <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">Formations to try</span>
+            <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">Formation guides</span>
           </div>
           <div class="glass rounded-2xl p-4 sm:p-5 text-center space-y-1">
             <span class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 block">5</span>
@@ -301,35 +330,25 @@
           </div>
         </div>
 
-        <!-- Formation Demo -->
+        <!-- Formations: text-rich cards + modals (replaces the old draggable demo) -->
         <div class="space-y-4">
           <div class="space-y-2">
-            <span class="text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">SEE IT MOVE</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">You move. The team moves with you.</h2>
+            <span class="text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">HOW WE MOVE AROUND YOU</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">Four formations, explained in plain words</h2>
             <p class="text-stone-600 text-xs sm:text-sm max-w-2xl leading-relaxed">
-              Drag the gold dot to walk the protected person across the floor. Each officer faces outward and keeps position as you go. Switch formations to see the team reshape.
+              A protection team changes shape to suit the space, the crowd and how fast you are moving.
+              Read each card, then open it for officer positions, when we use it, and what it feels like for you as the guest.
             </p>
           </div>
 
-          <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-stone-900 to-stone-950 border border-stone-800 shadow-xl">
-            <div id="stage" class="stage relative h-[340px] sm:h-[400px] lg:h-[460px]">
-              <canvas id="fx" aria-hidden="true"></canvas>
-              <button type="button" id="principal" class="stage-principal" aria-label="The protected person. Drag, or use the arrow keys, and the protection team follows."><span class="stage-core"></span></button>
-              <p id="stage-hint" class="glass-chip absolute left-4 top-4 text-white text-[11px] font-semibold px-3 py-1.5 rounded-full pointer-events-none transition-opacity duration-500">Drag the gold dot</p>
-            </div>
-          </div>
+          <div id="formation-cards" class="grid grid-cols-1 gap-3 sm:gap-4"></div>
 
-          <div class="flex flex-wrap items-center justify-between gap-3">
-            <div id="formation-pills" class="glass flex flex-wrap gap-2 p-1.5 rounded-2xl w-fit max-w-full" role="radiogroup" aria-label="Formation">
-              <button type="button" role="radio" aria-checked="true" tabindex="0" data-formation="diamond" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#80182a] text-white shadow-sm">Diamond</button>
-              <button type="button" role="radio" aria-checked="false" tabindex="-1" data-formation="box" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#f8f6f0] text-stone-600 hover:bg-stone-200">Box</button>
-              <button type="button" role="radio" aria-checked="false" tabindex="-1" data-formation="wedge" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#f8f6f0] text-stone-600 hover:bg-stone-200">Wedge</button>
-              <button type="button" role="radio" aria-checked="false" tabindex="-1" data-formation="column" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#f8f6f0] text-stone-600 hover:bg-stone-200">Column</button>
+          <div class="glass rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">Not sure which one fits your event? Answer three questions and we will point you to the right service.</p>
+            <div class="flex flex-wrap gap-2 flex-shrink-0">
+              <button data-open-modal="modal-formations" class="bg-white hover:bg-stone-50 border border-stone-200 text-stone-800 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all">Why formations matter</button>
+              <button data-open-finder class="bg-[#80182a] hover:bg-[#6e1423] text-white px-4 py-2.5 rounded-xl text-xs font-semibold transition-all">Find the right service</button>
             </div>
-            <button data-open-modal="modal-formations" class="text-xs font-bold text-[#80182a] hover:underline underline-offset-4 inline-flex items-center gap-1">
-              <span>Why formations?</span>
-              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
           </div>
         </div>
 
@@ -342,6 +361,63 @@
           </div>
           <div class="marquee-container rounded-2xl">
             <div id="gallery-track" class="marquee-track"></div>
+          </div>
+        </div>
+
+        <!-- At a glance: services preview (information-rich, no new images) -->
+        <div class="space-y-4">
+          <div class="space-y-1">
+            <span class="text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">WHAT WE DO</span>
+            <h2 class="font-serif text-3xl font-bold text-stone-900">Five services, one point of contact</h2>
+            <p class="text-xs sm:text-sm text-stone-600 max-w-2xl leading-relaxed">Every assignment starts with a briefing and ends with a review. Here is the short version — open any card for the full detail.</p>
+          </div>
+          <div id="home-services-preview" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4"></div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
+            <div class="bg-white rounded-3xl border border-stone-200/80 shadow-sm p-5 sm:p-6 space-y-3">
+              <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">HOW AN ASSIGNMENT RUNS</span>
+              <ol class="space-y-2 text-xs sm:text-sm text-stone-700 leading-relaxed list-none">
+                <li><strong class="text-stone-900">1. Briefing</strong> — a short call or WhatsApp chat: who, where, when.</li>
+                <li><strong class="text-stone-900">2. Assessment</strong> — we check people, places and routes for the real risks.</li>
+                <li><strong class="text-stone-900">3. Plan</strong> — team size, timings, contacts and formations agreed in one plan.</li>
+                <li><strong class="text-stone-900">4. Deployment</strong> — officers in position before you arrive, one team lead to call.</li>
+                <li><strong class="text-stone-900">5. Review</strong> — what happened, and what to adjust next time.</li>
+              </ol>
+              <button data-nav-tab="process" class="text-xs font-bold text-[#80182a] hover:underline underline-offset-4">Read the full process →</button>
+            </div>
+            <div class="bg-white rounded-3xl border border-stone-200/80 shadow-sm p-5 sm:p-6 space-y-3">
+              <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">WHEN TO CALL US</span>
+              <ul class="space-y-2 text-xs sm:text-sm text-stone-700 leading-relaxed">
+                <li class="flex gap-2"><span class="text-[#80182a] font-bold">•</span><span><strong class="text-stone-900">A person needs cover</strong> — daily movement, travel, appearances, family events.</span></li>
+                <li class="flex gap-2"><span class="text-[#80182a] font-bold">•</span><span><strong class="text-stone-900">Guests need receiving</strong> — weddings, conferences, delegations, ceremonies.</span></li>
+                <li class="flex gap-2"><span class="text-[#80182a] font-bold">•</span><span><strong class="text-stone-900">A place needs running</strong> — estates, venues and organisations with ongoing shifts.</span></li>
+                <li class="flex gap-2"><span class="text-[#80182a] font-bold">•</span><span><strong class="text-stone-900">A decision needs advice</strong> — risk review before an event, a trip or a move.</span></li>
+              </ul>
+              <button data-open-finder class="text-xs font-bold text-[#80182a] hover:underline underline-offset-4">Answer 3 questions to find your fit →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coverage + standards strip -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
+          <div class="glass rounded-3xl p-6 sm:p-7 space-y-3">
+            <span class="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">WHERE WE WORK</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">Based in Redemption City, mobile where you need us</h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">Our base is the Profound Groups Complex, Redemption City, Mowe, Ogun State. Tell us the venue, route or city in your first message and we will confirm what is possible, including coordination with your venue or host security.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 rounded-full px-3 py-1.5">Lagos &amp; Ogun coverage</span>
+              <span class="text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 rounded-full px-3 py-1.5">Travel &amp; events</span>
+              <span class="text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 rounded-full px-3 py-1.5">Venue coordination</span>
+            </div>
+          </div>
+          <div class="bg-stone-950 text-white rounded-3xl p-6 sm:p-7 space-y-3 border border-stone-800">
+            <span class="text-[10px] sm:text-[11px] font-bold tracking-widest text-amber-300 uppercase block">OUR STANDARD ON EVERY JOB</span>
+            <ul class="space-y-2 text-xs sm:text-sm text-stone-200 leading-relaxed">
+              <li><strong class="text-white">Prepared:</strong> routes walked, venues checked, contacts agreed before you arrive.</li>
+              <li><strong class="text-white">Discreet:</strong> officers dress for the setting and stay out of your photographs.</li>
+              <li><strong class="text-white">Accountable:</strong> one team lead owns the detail from briefing to review.</li>
+              <li><strong class="text-white">Private:</strong> what you send goes straight to TeamSamson — this site stores nothing.</li>
+            </ul>
+            <button data-nav-tab="about" class="text-xs font-bold text-amber-300 hover:underline underline-offset-4">More about how we work →</button>
           </div>
         </div>
 
@@ -374,6 +450,33 @@
 
         <!-- Service Cards (filled by JS) -->
         <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5"></div>
+
+        <!-- Comparison guide: information-rich, no new images -->
+        <div class="bg-white rounded-3xl border border-stone-200/80 shadow-sm p-5 sm:p-7 space-y-4 overflow-hidden">
+          <div class="space-y-1">
+            <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">WHICH ONE DO I NEED?</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">Compare at a glance</h3>
+          </div>
+          <div class="overflow-x-auto -mx-5 px-5 sm:mx-0 sm:px-0">
+            <table class="w-full min-w-[560px] text-left text-xs sm:text-sm">
+              <thead>
+                <tr class="text-[10px] uppercase tracking-widest text-stone-500 border-b border-stone-200">
+                  <th class="py-2 pr-3 font-bold">If you need…</th>
+                  <th class="py-2 pr-3 font-bold">Start with</th>
+                  <th class="py-2 font-bold">What you get</th>
+                </tr>
+              </thead>
+              <tbody class="text-stone-700 leading-relaxed">
+                <tr class="border-b border-stone-100"><td class="py-2.5 pr-3">Someone beside you through the day</td><td class="py-2.5 pr-3 font-semibold text-stone-900">Close protection</td><td class="py-2.5">Officers within reach, routes checked</td></tr>
+                <tr class="border-b border-stone-100"><td class="py-2.5 pr-3">A guest moved through crowds</td><td class="py-2.5 pr-3 font-semibold text-stone-900">VIP protection</td><td class="py-2.5">Arrival, holding area, exit plan</td></tr>
+                <tr class="border-b border-stone-100"><td class="py-2.5 pr-3">Guests welcomed and seated in order</td><td class="py-2.5 pr-3 font-semibold text-stone-900">Protocol services</td><td class="py-2.5">Reception, guiding, precedence</td></tr>
+                <tr class="border-b border-stone-100"><td class="py-2.5 pr-3">A clear view of risks before you commit</td><td class="py-2.5 pr-3 font-semibold text-stone-900">Consulting</td><td class="py-2.5">Assessment + plain written plan</td></tr>
+                <tr><td class="py-2.5 pr-3">Staff run week after week</td><td class="py-2.5 pr-3 font-semibold text-stone-900">Management</td><td class="py-2.5">Scheduled, supervised team</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-[11px] sm:text-xs text-stone-500 leading-relaxed">Many assignments combine two services — for example VIP protection with protocol at a wedding, or consulting followed by close protection for travel. Mention both in your briefing.</p>
+        </div>
 
         <!-- Finder Card -->
         <div class="glass rounded-3xl p-6 sm:p-7 flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -421,6 +524,22 @@
             <h2 class="font-serif text-3xl font-bold text-stone-900">Before you get in touch</h2>
           </div>
           <div id="faq-list" class="space-y-2 max-w-3xl"></div>
+        </div>
+
+        <!-- On-the-day standards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
+          <div class="bg-white rounded-3xl border border-stone-200/80 shadow-sm p-5 space-y-2">
+            <h3 class="font-serif text-xl font-bold text-stone-900">On the day</h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">Officers arrive early, walk the venue once more, take positions, and the team lead checks in with you or your representative. You should not have to chase anyone.</p>
+          </div>
+          <div class="bg-white rounded-3xl border border-stone-200/80 shadow-sm p-5 space-y-2">
+            <h3 class="font-serif text-xl font-bold text-stone-900">If plans change</h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">Timings slip and guests run late. Call the team lead — one number, not many. We reshape positions, routes and holding arrangements around the new plan.</p>
+          </div>
+          <div class="bg-white rounded-3xl border border-stone-200/80 shadow-sm p-5 space-y-2">
+            <h3 class="font-serif text-xl font-bold text-stone-900">Afterwards</h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">We review what worked, note incidents or near-misses, and update the plan. For ongoing cover this becomes a scheduled review with reports.</p>
+          </div>
         </div>
       </section>
 
@@ -472,7 +591,32 @@
         <!-- Situations -->
         <div class="glass rounded-3xl p-6 sm:p-7 space-y-3">
           <span class="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#80182a] uppercase block">WHERE WE WORK</span>
+          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed max-w-2xl">If your occasion involves people arriving, gathering and leaving in good order, it is our kind of work. Common settings are below — if yours is not listed, describe it in the briefing.</p>
           <div id="situations-chips" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Team structure + conduct: information-rich -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
+          <div class="bg-white rounded-3xl border border-stone-200/80 shadow-sm p-5 sm:p-7 space-y-3">
+            <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">HOW A DETAIL IS ORGANISED</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">One lead, clear roles</h3>
+            <ul class="space-y-2 text-xs sm:text-sm text-stone-700 leading-relaxed">
+              <li><strong class="text-stone-900">Team lead</strong> — your single contact; briefs the officers and stays reachable throughout.</li>
+              <li><strong class="text-stone-900">Close officers</strong> — stay with the person; watch outward, not at the guest.</li>
+              <li><strong class="text-stone-900">Advance &amp; route</strong> — check venues, entrances, exits and parking before arrival.</li>
+              <li><strong class="text-stone-900">Protocol hosts</strong> — receive, guide and seat guests; keep the programme moving.</li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-3xl border border-stone-200/80 shadow-sm p-5 sm:p-7 space-y-3">
+            <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">CODE OF CONDUCT</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">What you can expect of us</h3>
+            <ul class="space-y-2 text-xs sm:text-sm text-stone-700 leading-relaxed">
+              <li>Dress to fit the occasion — no unnecessary attention or display.</li>
+              <li>Respect privacy: no photographs of you or your guests, no discussion of your affairs.</li>
+              <li>Work with, not against, your venue, church, family or company security.</li>
+              <li>Keep positions and attention on the space around you, from arrival to handover.</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -532,7 +676,31 @@
                 <button data-open-brief class="w-full bg-[#80182a] hover:bg-[#6e1423] text-white py-3 rounded-xl font-semibold text-xs sm:text-sm transition-colors">Book a briefing</button>
               </div>
             </div>
+            <div class="glass rounded-3xl p-5 sm:p-6 space-y-3">
+              <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">BEFORE YOU MESSAGE</span>
+              <ul class="space-y-2 text-xs sm:text-sm text-stone-700 leading-relaxed">
+                <li><strong class="text-stone-900">Response hours:</strong> we reply to arrange a briefing — for urgent same-day needs, say so in your first line.</li>
+                <li><strong class="text-stone-900">Visits:</strong> message first so we can confirm the best time to receive you.</li>
+                <li><strong class="text-stone-900">Privacy:</strong> this site does not store what you type; your message goes straight to TeamSamson.</li>
+              </ul>
+            </div>
           </aside>
+        </div>
+
+        <!-- Good-to-know strip -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+          <div class="bg-white rounded-2xl border border-stone-200/80 p-4 space-y-1">
+            <h3 class="font-serif text-lg font-bold text-stone-900">What to include</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">Date, venue or route, number of people, and any team already in place.</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-stone-200/80 p-4 space-y-1">
+            <h3 class="font-serif text-lg font-bold text-stone-900">How fast we reply</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">WhatsApp is fastest. Email works for longer programmes and attachments.</p>
+          </div>
+          <div class="bg-white rounded-2xl border border-stone-200/80 p-4 space-y-1">
+            <h3 class="font-serif text-lg font-bold text-stone-900">Where to find us</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">Profound Groups Complex, Redemption City, Mowe, Ogun State — open in Maps below.</p>
+          </div>
         </div>
       </section>
     </main>
@@ -669,14 +837,34 @@
           </div>
         </div>
         <div class="p-4 sm:p-6 space-y-4">
-          <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">A protection team does not stand still around you. It changes formation to suit the space, the crowd and how fast you are moving.</p>
+          <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">A protection team does not stand still around you. It changes formation to suit the space, the crowd and how fast you are moving. The guides below use four officers — the real size of a team depends on the assessment.</p>
           <ul id="formations-list" class="space-y-2"></ul>
-          <p class="bg-[#f8f6f0] border border-stone-200/60 rounded-xl px-3.5 py-2.5 text-[11px] sm:text-xs text-stone-600 leading-relaxed">The demo uses four officers. The real size of a team depends on the assessment.</p>
+          <div class="bg-[#f8f6f0] border border-stone-200/60 rounded-xl px-3.5 py-2.5 text-[11px] sm:text-xs text-stone-600 leading-relaxed space-y-1">
+            <p><strong class="text-stone-800">What stays the same in every shape:</strong> officers face outward, the protected person stays in the middle, and one team lead owns movement and communication.</p>
+            <p>Formations are chosen at the planning stage and adjusted on the day as crowds, venues and timings change.</p>
+          </div>
           <div class="flex flex-col sm:flex-row gap-2 pt-2 border-t border-stone-100">
             <button data-open-brief class="flex-1 py-2.5 sm:py-3 rounded-xl border border-stone-200 hover:bg-stone-50 font-medium text-xs text-stone-700 transition-colors">Book a briefing</button>
             <button data-close-modal="modal-formations" class="flex-1 py-2.5 sm:py-3 rounded-xl bg-[#80182a] hover:bg-[#6e1423] text-white font-medium text-xs sm:text-sm transition-colors text-center">Close</button>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Modal 4b: Formation Detail (filled by openFormationModal) -->
+    <div id="modal-formation-detail" class="modal-backdrop hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-start sm:items-center justify-center p-3 sm:p-6 py-6 sm:py-10" role="dialog" aria-modal="true" aria-labelledby="formation-detail-title">
+      <div class="modal-panel bg-white rounded-2xl sm:rounded-3xl max-w-lg w-full my-auto border border-stone-200 shadow-2xl overflow-hidden">
+        <div class="relative h-32 sm:h-40 overflow-hidden flex-shrink-0 bg-gradient-to-br from-[#80182a] via-[#4a0f1c] to-stone-950">
+          <div class="absolute inset-0 dot-pattern opacity-70"></div>
+          <div data-media="modals.formations" class="absolute inset-0"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/30 to-transparent"></div>
+          <button data-close-modal="modal-formation-detail" aria-label="Close" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur text-white text-lg leading-none transition-colors">×</button>
+          <div class="absolute bottom-3 left-4 right-4 sm:left-6 sm:right-6">
+            <span id="formation-detail-tag" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/20 backdrop-blur-md border border-white/30 text-white">Formation</span>
+            <h3 id="formation-detail-title" class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1.5 leading-tight"></h3>
+          </div>
+        </div>
+        <div id="formation-detail-body" class="p-4 sm:p-6 space-y-4"></div>
       </div>
     </div>
 
@@ -723,7 +911,7 @@ const IMAGES = {
     finder: 'finder.jpg',
     formations: 'formations.jpg'
   },
-  gallery: ['1.jpg', '2.jpg', 'hero.jpg', 'finder.jpg', '5.jpg', '6.jpg'],   // home gallery strip (captions in SITE_DATA.galleryCaptions)
+  gallery: ['1.jpg', '2.jpg', 'ma2.jpg', 'close.jpg', 'vip3.jpg', 'office.jpg'],   // home gallery strip — all files exist in this folder (captions in SITE_DATA.galleryCaptions)
   services: {                  // card = photo on the service card, modal = header photo, thumbs = two small photos inside the modal
     close:      { card: 'close3.jpg', modal: 'close.jpg', thumbs: ['1.jpg', 'close2.jpg'] },
     vip:        { card: 'formations.jpg', modal: 'about.jpg', thumbs: ['hero.jpg', 'office.jpg'] },
@@ -833,12 +1021,28 @@ const SITE_DATA = {
     { title: 'Event hosts', text: 'Weddings, conferences, ceremonies and gatherings of any size.' }
   ],
   situations: ['Weddings and ceremonies', 'Conferences and conventions', 'Worship gatherings', 'Daily movement', 'Business travel', 'Visiting delegations', 'Corporate events', 'Public appearances', 'Estates and complexes', 'Funerals and memorial services'],
-  galleryCaptions: ['Close protection detail', 'Arrival at an event', 'Protocol team at a reception', 'Venue advance check', 'Guests being received', 'Team briefing'],
+  galleryCaptions: ['Close protection detail', 'Arrival at an event', 'Protocol team on duty', 'Officers in position', 'Guest reception line', 'Advance check at the venue'],
   formations: [
-    { id: 'diamond', name: 'Diamond', text: 'The everyday shape in open space. One officer ahead, one behind and one on each side.' },
-    { id: 'box', name: 'Box', text: 'Officers at four corners around someone who is standing or moving slowly, such as at a reception or in a queue.' },
-    { id: 'wedge', name: 'Wedge', text: 'A V that opens a path through a busy crowd toward an exit or a vehicle.' },
-    { id: 'column', name: 'Column', text: 'A single line for narrow places such as corridors, stairwells and gates.' }
+    { id: 'diamond', name: 'Diamond', tag: 'OPEN SPACE · EVERYDAY MOVEMENT', text: 'The everyday shape in open space. One officer ahead, one behind and one on each side.',
+      positions: 'Point officer ahead watching the route; two flank officers left and right watching outward; rear officer watching behind. You walk in the middle.',
+      bestFor: ['Walking across open ground', 'Car parks and forecourts', 'Arrivals and departures', 'Everyday movement'],
+      experience: 'You walk normally with space around you. The team adjusts pace to yours and opens or closes distance as the crowd changes.',
+      tip: 'Our default for movement unless the space forces another shape.' },
+    { id: 'box', name: 'Box', tag: 'STANDING · SLOW CROWDS', text: 'Officers at four corners around someone who is standing or moving slowly, such as at a reception or in a queue.',
+      positions: 'One officer at each corner of a square around you, all facing outward. Corners hold even when you turn to greet someone.',
+      bestFor: ['Receptions and photo lines', 'Queues and holding areas', 'Meet-and-greet lines', 'Standing interviews'],
+      experience: 'You can talk, greet and pose while the square holds. Officers do not crowd your conversation — they watch the edges.',
+      tip: 'Often paired with protocol hosts who manage who approaches next.' },
+    { id: 'wedge', name: 'Wedge', tag: 'BUSY CROWDS · EXITS', text: 'A V that opens a path through a busy crowd toward an exit or a vehicle.',
+      positions: 'Point officer at the front of the V clearing the path; two wing officers angled back along your sides; rear officer close behind you.',
+      bestFor: ['Pushing through dense crowds', 'Moving to a vehicle', 'Exits after a programme', 'Market and street movement'],
+      experience: 'Movement is deliberate and steady. The point officer asks for the way where needed; you keep walking inside the V.',
+      tip: 'Used for short bursts — once clear, the team usually settles back into diamond.' },
+    { id: 'column', name: 'Column', tag: 'NARROW PLACES · CORRIDORS', text: 'A single line for narrow places such as corridors, stairwells and gates.',
+      positions: 'One officer ahead, one or two with you in the middle, one behind. Order is kept on stairs and through doors.',
+      bestFor: ['Corridors and stairwells', 'Gates and doorways', 'Aircraft and vehicle boarding', 'Narrow venue passages'],
+      experience: 'You follow the lead officer through the pinch point. The team re-forms on the other side without you needing to stop.',
+      tip: 'Advance checks matter most here — we confirm door widths, stairs and alternative exits beforehand.' }
   ],
   whenOptions: ['As soon as possible', 'Within a week', 'Within a month', 'Just exploring'],
   finder: {
@@ -943,7 +1147,7 @@ document.addEventListener('error', (e) => {
 let currentTab = 'home';
 let currentServiceIdx = 0;
 let lastFocused = null;
-let stageApi = null;
+/* stageApi removed: formations are now static cards */
 const brief = { step: 1, services: [], name: '', phone: '', where: '', when: '', notes: '', errors: {} };
 const finder = { step: 0, picks: [] };
 
@@ -1447,6 +1651,79 @@ function renderGallery() {
   const idx = Array.from({ length: count }, (_, i) => i);
   track.innerHTML = idx.map((i) => item(i, false)).join('') + idx.map((i) => item(i, true)).join('');
 }
+function renderHomePreview() {
+  const el = document.getElementById('home-services-preview');
+  if (!el) return;
+  el.innerHTML = SITE_DATA.services.map((s) => `
+    <button type="button" data-open-service="${s.id}" class="text-left bg-white rounded-3xl border border-stone-200/80 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all p-5 space-y-2">
+      <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">${esc(s.category)}</span>
+      <span class="font-serif text-xl font-bold text-stone-900 block">${esc(s.name)}</span>
+      <span class="text-xs text-stone-600 leading-relaxed block">${esc(s.short)}</span>
+      <span class="inline-flex items-center gap-1 text-xs font-bold text-[#80182a]">View details
+        <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </span>
+    </button>`).join('');
+}
+function formationDiagram(id) {
+  const dots = {
+    diamond: [[50, 12], [82, 50], [50, 88], [18, 50]],
+    box: [[28, 28], [72, 28], [28, 72], [72, 72]],
+    wedge: [[50, 10], [24, 62], [76, 62], [50, 88]],
+    column: [[50, 8], [50, 36], [50, 64], [50, 90]]
+  }[id] || [[50, 12], [82, 50], [50, 88], [18, 50]];
+  const circles = dots.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="7" fill="#fff" stroke="#80182a" stroke-width="2.5"/><circle cx="${x}" cy="${y}" r="2.2" fill="#80182a" stroke="none"/>`).join('');
+  return `<svg viewBox="0 0 100 100" class="w-full h-full" aria-hidden="true"><rect x="4" y="4" width="92" height="92" rx="16" fill="#f8f6f0" stroke="#e7e0d3"/><circle cx="50" cy="50" r="9" fill="#d9a441" stroke="#fff" stroke-width="2.5"/>${circles}</svg>`;
+}
+function renderFormationCards() {
+  const el = document.getElementById('formation-cards');
+  if (!el) return;
+  el.innerHTML = SITE_DATA.formations.map((f) => `
+    <article class="bg-white rounded-3xl border border-stone-200/80 shadow-sm overflow-hidden flex flex-col">
+      <div class="formation-diagram p-4 pb-0"><div class="w-full h-full rounded-2xl overflow-hidden border border-stone-200/60">${formationDiagram(f.id)}</div></div>
+      <div class="p-5 flex flex-col gap-2.5 flex-1">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest text-[#80182a] uppercase block">${esc(f.tag || 'FORMATION')}</span>
+          <h3 class="font-serif text-2xl font-bold text-stone-900 mt-0.5">${esc(f.name)}</h3>
+        </div>
+        <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">${esc(f.text)}</p>
+        <div class="flex flex-wrap gap-1.5">
+          ${f.bestFor.slice(0, 3).map((x) => `<span class="text-[10px] font-semibold text-stone-600 bg-[#f8f6f0] border border-stone-200/60 rounded-full px-2.5 py-1">${esc(x)}</span>`).join('')}
+        </div>
+        <div class="mt-auto pt-2 flex flex-col sm:flex-row gap-2">
+          <button data-show-formation="${f.id}" class="flex-1 py-2.5 rounded-xl bg-[#80182a] hover:bg-[#6e1423] text-white font-semibold text-xs transition-colors">Read full guide</button>
+        </div>
+      </div>
+    </article>`).join('');
+}
+function openFormationModal(fid) {
+  const f = SITE_DATA.formations.find((x) => x.id === fid);
+  if (!f) return;
+  document.getElementById('formation-detail-tag').textContent = f.tag || 'Formation';
+  document.getElementById('formation-detail-title').textContent = f.name + ' formation';
+  document.getElementById('formation-detail-body').innerHTML = `
+    <div class="rounded-2xl overflow-hidden border border-stone-200/60 h-40 sm:h-48">${formationDiagram(f.id)}</div>
+    <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">${esc(f.text)}</p>
+    <div>
+      <span class="text-[10px] font-bold tracking-widest text-stone-500 uppercase block mb-2">OFFICER POSITIONS</span>
+      <p class="bg-[#f8f6f0] border border-stone-200/60 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-stone-700 leading-relaxed">${esc(f.positions)}</p>
+    </div>
+    <div>
+      <span class="text-[10px] font-bold tracking-widest text-stone-500 uppercase block mb-2">BEST FOR</span>
+      <div class="flex flex-wrap gap-1.5">
+        ${f.bestFor.map((x) => `<span class="text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 rounded-full px-3 py-1.5">${esc(x)}</span>`).join('')}
+      </div>
+    </div>
+    <div>
+      <span class="text-[10px] font-bold tracking-widest text-stone-500 uppercase block mb-2">WHAT IT FEELS LIKE FOR YOU</span>
+      <p class="text-xs sm:text-sm text-stone-700 leading-relaxed">${esc(f.experience)}</p>
+    </div>
+    <p class="bg-rose-50 border border-rose-100 rounded-xl px-3.5 py-2.5 text-[11px] sm:text-xs text-stone-600 leading-relaxed"><strong class="text-stone-800">Planner note:</strong> ${esc(f.tip)}</p>
+    <div class="flex flex-col sm:flex-row gap-2 pt-2 border-t border-stone-100">
+      <button data-open-brief class="flex-1 py-2.5 sm:py-3 rounded-xl border border-stone-200 hover:bg-stone-50 font-medium text-xs text-stone-700 transition-colors">Book a briefing</button>
+      <button data-close-modal="modal-formation-detail" class="flex-1 py-2.5 sm:py-3 rounded-xl bg-[#80182a] hover:bg-[#6e1423] text-white font-medium text-xs sm:text-sm transition-colors text-center">Close</button>
+    </div>`;
+  openModal('modal-formation-detail');
+}
 function renderFormationList() {
   const el = document.getElementById('formations-list');
   if (!el) return;
@@ -1456,7 +1733,7 @@ function renderFormationList() {
         <h4 class="font-serif text-lg font-bold text-stone-900">${esc(f.name)}</h4>
         <p class="text-xs text-stone-600 leading-relaxed">${esc(f.text)}</p>
       </div>
-      <button data-show-formation="${f.id}" class="text-[11px] font-bold text-[#80182a] bg-white hover:bg-rose-50 border border-stone-200 px-3 py-2 rounded-full flex-shrink-0 transition-colors">Show me</button>
+      <button data-show-formation="${f.id}" class="text-[11px] font-bold text-[#80182a] bg-white hover:bg-rose-50 border border-stone-200 px-3 py-2 rounded-full flex-shrink-0 transition-colors">Read guide</button>
     </li>`).join('');
 }
 function renderFooterLists() {
@@ -1476,219 +1753,7 @@ function fillContactLinks() {
   document.querySelectorAll('[data-email-text]').forEach((el) => { el.textContent = SITE_DATA.email; });
 }
 
-// --- FORMATION STAGE (interactive demo on the home tab) ---
-function initStage() {
-  const stage = document.getElementById('stage');
-  const cv = document.getElementById('fx');
-  const handle = document.getElementById('principal');
-  const hint = document.getElementById('stage-hint');
-  const pills = document.getElementById('formation-pills');
-  if (!stage || !cv || !handle) return null;
-  const ctx = cv.getContext('2d');
-  if (!ctx) return null;
-
-  const PILL_ON = 'px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#80182a] text-white shadow-sm';
-  const PILL_OFF = 'px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#f8f6f0] text-stone-600 hover:bg-stone-200';
-  const FORMS = {
-    diamond: [[1, 0], [-1, 0], [0, 1], [0, -1]],
-    box: [[.78, .78], [.78, -.78], [-.78, .78], [-.78, -.78]],
-    wedge: [[1.35, 0], [.7, .9], [.7, -.9], [-.95, 0]],
-    column: [[1.75, 0], [.88, 0], [-.88, 0], [-1.75, 0]]
-  };
-
-  let W = 0, H = 0, R = 58, inited = false;
-  let form = 'diamond';
-  const P = { x: 0, y: 0 }, T = { x: 0, y: 0 }, prev = { x: 0, y: 0 };
-  let heading = -Math.PI / 2;
-  const agents = [0, 1, 2, 3].map((i) => ({ x: 0, y: 0, vx: 0, vy: 0, k: 70 + i * 14 }));
-  let interacted = false, dragging = false, offX = 0, offY = 0;
-  let running = false, visible = true, raf = null;
-  const t0 = performance.now();
-  let last = t0;
-
-  function resize() {
-    const r = stage.getBoundingClientRect();
-    if (!r.width || !r.height) return;
-    const sx = W ? r.width / W : 1;
-    const sy = H ? r.height / H : 1;
-    W = r.width; H = r.height;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    cv.width = Math.round(W * dpr);
-    cv.height = Math.round(H * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    R = clamp(Math.min(W, H) * .17, 46, 84);
-    if (!inited) {
-      P.x = T.x = W * .5; P.y = T.y = H * .5; prev.x = P.x; prev.y = P.y;
-      const starts = [[-30, -30], [W + 30, -30], [-30, H + 30], [W + 30, H + 30]];
-      agents.forEach((a, i) => { a.x = starts[i][0]; a.y = starts[i][1]; a.vx = a.vy = 0; });
-      inited = true;
-    } else {
-      P.x *= sx; P.y *= sy; T.x *= sx; T.y *= sy; prev.x = P.x; prev.y = P.y;
-      agents.forEach((a) => { a.x *= sx; a.y *= sy; });
-    }
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    // dotted floor that lights up around the protected person
-    const gs = 24;
-    for (let x = gs / 2; x < W; x += gs) {
-      for (let y = gs / 2; y < H; y += gs) {
-        const dx = x - P.x, dy = y - P.y;
-        const a = .08 + .5 * Math.exp(-(dx * dx + dy * dy) / (2 * 95 * 95));
-        ctx.fillStyle = `rgba(255,255,255,${a.toFixed(3)})`;
-        ctx.fillRect(x - 1, y - 1, 2, 2);
-      }
-    }
-    // protected zone
-    const pts = agents.map((g) => ({ x: g.x, y: g.y, a: Math.atan2(g.y - P.y, g.x - P.x) })).sort((p, q) => p.a - q.a);
-    ctx.beginPath();
-    pts.forEach((p, i) => { if (i) ctx.lineTo(p.x, p.y); else ctx.moveTo(p.x, p.y); });
-    ctx.closePath();
-    ctx.fillStyle = 'rgba(217,164,65,.10)'; ctx.fill();
-    ctx.setLineDash([4, 6]); ctx.strokeStyle = 'rgba(255,255,255,.32)'; ctx.lineWidth = 1; ctx.stroke(); ctx.setLineDash([]);
-    // eyes outward: each officer watches away from the person
-    const fr = Math.max(40, R * .85);
-    agents.forEach((g) => {
-      const ang = Math.atan2(g.y - P.y, g.x - P.x);
-      const gr = ctx.createRadialGradient(g.x, g.y, 0, g.x, g.y, fr);
-      gr.addColorStop(0, 'rgba(255,255,255,.34)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
-      ctx.fillStyle = gr; ctx.beginPath(); ctx.moveTo(g.x, g.y); ctx.arc(g.x, g.y, fr, ang - .6, ang + .6); ctx.closePath(); ctx.fill();
-    });
-    // halo
-    const hg = ctx.createRadialGradient(P.x, P.y, 0, P.x, P.y, 78);
-    hg.addColorStop(0, 'rgba(217,164,65,.36)'); hg.addColorStop(1, 'rgba(217,164,65,0)');
-    ctx.fillStyle = hg; ctx.beginPath(); ctx.arc(P.x, P.y, 78, 0, Math.PI * 2); ctx.fill();
-    // spokes and officers
-    ctx.strokeStyle = 'rgba(255,255,255,.14)'; ctx.lineWidth = 1;
-    agents.forEach((g) => { ctx.beginPath(); ctx.moveTo(P.x, P.y); ctx.lineTo(g.x, g.y); ctx.stroke(); });
-    agents.forEach((g) => {
-      ctx.beginPath(); ctx.arc(g.x, g.y, 7, 0, Math.PI * 2);
-      ctx.lineWidth = 4; ctx.strokeStyle = '#1c1917'; ctx.stroke();
-      ctx.fillStyle = '#ffffff'; ctx.fill();
-    });
-    handle.style.transform = `translate3d(${P.x.toFixed(1)}px,${P.y.toFixed(1)}px,0)`;
-  }
-
-  function frame(now) {
-    raf = null;
-    if (!running) return;
-    if (!W) resize();
-    let dt = Math.min(.033, (now - last) / 1000);
-    last = now;
-    if (dt <= 0) dt = .016;
-    const t = (now - t0) / 1000;
-    if (W) {
-      if (!interacted && !prefersReducedMotion) {
-        T.x = W * (.5 + .27 * Math.sin(t * .55));
-        T.y = H * (.5 + .2 * Math.sin(t * .9 + 1.2));
-      }
-      const f = 1 - Math.exp(-dt * (dragging ? 26 : 14));
-      P.x += (T.x - P.x) * f; P.y += (T.y - P.y) * f;
-      const vx = (P.x - prev.x) / dt, vy = (P.y - prev.y) / dt;
-      prev.x = P.x; prev.y = P.y;
-      if (!prefersReducedMotion && Math.hypot(vx, vy) > 30) {
-        let d = Math.atan2(vy, vx) - heading;
-        d = Math.atan2(Math.sin(d), Math.cos(d));
-        heading += d * (1 - Math.exp(-dt * 5));
-      }
-      const Fx = Math.cos(heading), Fy = Math.sin(heading), Sx = -Fy, Sy = Fx;
-      const offs = FORMS[form];
-      for (let i = 0; i < 4; i++) {
-        const a = agents[i];
-        const tx = clamp(P.x + R * (offs[i][0] * Fx + offs[i][1] * Sx), 14, W - 14);
-        const ty = clamp(P.y + R * (offs[i][0] * Fy + offs[i][1] * Sy), 14, H - 14);
-        if (prefersReducedMotion) { a.x = tx; a.y = ty; }
-        else {
-          const c = 2 * Math.sqrt(a.k) * .72;
-          a.vx += (a.k * (tx - a.x) - c * a.vx) * dt;
-          a.vy += (a.k * (ty - a.y) - c * a.vy) * dt;
-          a.x += a.vx * dt; a.y += a.vy * dt;
-        }
-      }
-      draw();
-    }
-    raf = requestAnimationFrame(frame);
-  }
-  function start() {
-    if (running || !visible || document.hidden) return;
-    running = true; last = performance.now();
-    raf = requestAnimationFrame(frame);
-  }
-  function stop() {
-    running = false;
-    if (raf) cancelAnimationFrame(raf);
-    raf = null;
-  }
-  function touched() { interacted = true; if (hint) hint.classList.add('opacity-0'); }
-
-  handle.addEventListener('pointerdown', (e) => {
-    dragging = true; touched();
-    handle.setPointerCapture(e.pointerId);
-    const r = stage.getBoundingClientRect();
-    offX = (e.clientX - r.left) - P.x; offY = (e.clientY - r.top) - P.y;
-    e.preventDefault();
-  });
-  handle.addEventListener('pointermove', (e) => {
-    if (!dragging) return;
-    const r = stage.getBoundingClientRect();
-    T.x = clamp(e.clientX - r.left - offX, 28, W - 28);
-    T.y = clamp(e.clientY - r.top - offY, 28, H - 28);
-  });
-  ['pointerup', 'pointercancel', 'lostpointercapture'].forEach((ev) => handle.addEventListener(ev, () => { dragging = false; }));
-  stage.addEventListener('click', (e) => {
-    if (e.target.closest('#principal')) return;
-    const r = stage.getBoundingClientRect();
-    touched();
-    T.x = clamp(e.clientX - r.left, 28, W - 28);
-    T.y = clamp(e.clientY - r.top, 28, H - 28);
-  });
-  handle.addEventListener('keydown', (e) => {
-    const step = e.shiftKey ? 60 : 30;
-    const m = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[e.key];
-    if (!m) return;
-    e.preventDefault(); touched();
-    T.x = clamp(T.x + m[0] * step, 28, W - 28);
-    T.y = clamp(T.y + m[1] * step, 28, H - 28);
-  });
-
-  function setFormation(key) {
-    if (!FORMS[key]) return;
-    form = key;
-    pills.querySelectorAll('[role="radio"]').forEach((b) => {
-      const on = b.getAttribute('data-formation') === key;
-      b.setAttribute('aria-checked', String(on));
-      b.setAttribute('tabindex', on ? '0' : '-1');
-      b.className = on ? PILL_ON : PILL_OFF;
-    });
-    touched();
-  }
-  pills.addEventListener('click', (e) => {
-    const b = e.target.closest('[data-formation]');
-    if (b) setFormation(b.getAttribute('data-formation'));
-  });
-  pills.addEventListener('keydown', (e) => {
-    const dir = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
-    if (!dir) return;
-    e.preventDefault();
-    const btns = Array.from(pills.querySelectorAll('[role="radio"]'));
-    const i = btns.indexOf(document.activeElement);
-    const nb = btns[(i + dir + btns.length) % btns.length];
-    nb.focus();
-    setFormation(nb.getAttribute('data-formation'));
-  });
-
-  if ('ResizeObserver' in window) new ResizeObserver(resize).observe(stage);
-  window.addEventListener('resize', resize);
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver((en) => { visible = en[0].isIntersecting; if (visible) start(); else stop(); }, { threshold: 0 }).observe(stage);
-  }
-  document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else start(); });
-  resize();
-  start();
-  return { setFormation };
-}
-
+// --- FORMATIONS are static cards + modals (no canvas demo) ---
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
   renderMediaSlots();
@@ -1701,7 +1766,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderFormationList();
   renderFooterLists();
   fillContactLinks();
-  stageApi = initStage();
+  renderFormationCards();
+  renderHomePreview();
 
   // One delegated click handler covers static and dynamic content
   document.addEventListener('click', (e) => {
@@ -1790,14 +1856,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     if ((t = e.target.closest('[data-show-formation]'))) {
-      const key = t.getAttribute('data-show-formation');
-      closeAllModals();
-      if (currentTab !== 'home') switchTab('home');
-      setTimeout(() => {
-        if (stageApi) stageApi.setFormation(key);
-        const st = document.getElementById('stage');
-        if (st) st.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'center' });
-      }, 120);
+      e.preventDefault();
+      openFormationModal(t.getAttribute('data-show-formation'));
       return;
     }
 
@@ -1840,6 +1900,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.openServiceModal = openServiceModal;
   window.openBriefModal = openBriefModal;
   window.openFinderModal = openFinderModal;
+  window.openFormationModal = openFormationModal;
   window.showToast = showToast;
 });
     </script>
